@@ -1,5 +1,0 @@
-/home/runner/work/MuAdminSetting/MuAdminSetting/src/MuAdmin.Core/bin/x86/Debug/MuAdmin.Core.dll
-/home/runner/work/MuAdminSetting/MuAdminSetting/src/MuAdmin.Core/bin/x86/Debug/MuAdmin.Core.pdb
-/home/runner/work/MuAdminSetting/MuAdminSetting/src/MuAdmin.Core/obj/x86/Debug/MuAdmin.Core.csproj.CoreCompileInputs.cache
-/home/runner/work/MuAdminSetting/MuAdminSetting/src/MuAdmin.Core/obj/x86/Debug/MuAdmin.Core.dll
-/home/runner/work/MuAdminSetting/MuAdminSetting/src/MuAdmin.Core/obj/x86/Debug/MuAdmin.Core.pdb
