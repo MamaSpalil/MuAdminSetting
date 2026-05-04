@@ -116,6 +116,15 @@ namespace MuAdmin.Tabs
         private static IFileEditor CreateEditorFor(string path)
         {
             string ext = (Path.GetExtension(path) ?? string.Empty).ToLowerInvariant();
+            string fileName = (Path.GetFileName(path) ?? string.Empty);
+            string parent = (Path.GetFileName(Path.GetDirectoryName(path) ?? string.Empty) ?? string.Empty);
+            // Special case: Quests\QuestSystem.ini is a hybrid INI + tabular
+            // file with a documented 17-column quest schema. Route it to a
+            // dedicated editor instead of the generic IniEditor so users can
+            // edit quest rows column-by-column.
+            if (string.Equals(fileName, "QuestSystem.ini", StringComparison.OrdinalIgnoreCase)
+                && string.Equals(parent, "Quests", StringComparison.OrdinalIgnoreCase))
+                return new QuestSystemEditor();
             switch (ext)
             {
                 case ".ini":

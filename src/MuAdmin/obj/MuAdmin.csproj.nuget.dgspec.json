@@ -1,0 +1,98 @@
+{
+  "format": 1,
+  "restore": {
+    "/home/runner/work/MuAdminSetting/MuAdminSetting/src/MuAdmin/MuAdmin.csproj": {}
+  },
+  "projects": {
+    "/home/runner/work/MuAdminSetting/MuAdminSetting/src/MuAdmin.Core/MuAdmin.Core.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "/home/runner/work/MuAdminSetting/MuAdminSetting/src/MuAdmin.Core/MuAdmin.Core.csproj",
+        "projectName": "MuAdmin.Core",
+        "projectPath": "/home/runner/work/MuAdminSetting/MuAdminSetting/src/MuAdmin.Core/MuAdmin.Core.csproj",
+        "packagesPath": "/home/runner/.nuget/packages/",
+        "outputPath": "/home/runner/work/MuAdminSetting/MuAdminSetting/src/MuAdmin.Core/obj/",
+        "projectStyle": "PackageReference",
+        "skipContentFileWrite": true,
+        "UsingMicrosoftNETSdk": false,
+        "configFilePaths": [
+          "/home/runner/.nuget/NuGet/NuGet.Config"
+        ],
+        "originalTargetFrameworks": [
+          "net48"
+        ],
+        "sources": {
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "net48": {
+            "projectReferences": {}
+          }
+        },
+        "restoreAuditProperties": {
+          "enableAudit": "true",
+          "auditLevel": "low",
+          "auditMode": "direct"
+        }
+      },
+      "frameworks": {
+        "net48": {
+          "dependencies": {
+            "Microsoft.NETFramework.ReferenceAssemblies.net48": {
+              "suppressParent": "All",
+              "target": "Package",
+              "version": "[1.0.3, )"
+            }
+          }
+        }
+      }
+    },
+    "/home/runner/work/MuAdminSetting/MuAdminSetting/src/MuAdmin/MuAdmin.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "/home/runner/work/MuAdminSetting/MuAdminSetting/src/MuAdmin/MuAdmin.csproj",
+        "projectName": "MuAdmin",
+        "projectPath": "/home/runner/work/MuAdminSetting/MuAdminSetting/src/MuAdmin/MuAdmin.csproj",
+        "packagesPath": "/home/runner/.nuget/packages/",
+        "outputPath": "/home/runner/work/MuAdminSetting/MuAdminSetting/src/MuAdmin/obj/",
+        "projectStyle": "PackageReference",
+        "skipContentFileWrite": true,
+        "UsingMicrosoftNETSdk": false,
+        "configFilePaths": [
+          "/home/runner/.nuget/NuGet/NuGet.Config"
+        ],
+        "originalTargetFrameworks": [
+          "net48"
+        ],
+        "sources": {
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "net48": {
+            "projectReferences": {
+              "/home/runner/work/MuAdminSetting/MuAdminSetting/src/MuAdmin.Core/MuAdmin.Core.csproj": {
+                "projectPath": "/home/runner/work/MuAdminSetting/MuAdminSetting/src/MuAdmin.Core/MuAdmin.Core.csproj"
+              }
+            }
+          }
+        },
+        "restoreAuditProperties": {
+          "enableAudit": "true",
+          "auditLevel": "low",
+          "auditMode": "direct"
+        }
+      },
+      "frameworks": {
+        "net48": {
+          "dependencies": {
+            "Microsoft.NETFramework.ReferenceAssemblies.net48": {
+              "suppressParent": "All",
+              "target": "Package",
+              "version": "[1.0.3, )"
+            }
+          }
+        }
+      }
+    }
+  }
+}

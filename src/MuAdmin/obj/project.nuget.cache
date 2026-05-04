@@ -1,0 +1,10 @@
+{
+  "version": 2,
+  "dgSpecHash": "QFFj4EJ2TvU=",
+  "success": true,
+  "projectFilePath": "/home/runner/work/MuAdminSetting/MuAdminSetting/src/MuAdmin/MuAdmin.csproj",
+  "expectedPackageFiles": [
+    "/home/runner/.nuget/packages/microsoft.netframework.referenceassemblies.net48/1.0.3/microsoft.netframework.referenceassemblies.net48.1.0.3.nupkg.sha512"
+  ],
+  "logs": []
+}

@@ -59,10 +59,12 @@
     <Compile Include="Parsers\TabularFileParser.cs" />
     <Compile Include="Parsers\IniFileParser.cs" />
     <Compile Include="Parsers\CfgFileParser.cs" />
+    <Compile Include="Parsers\QuestSystemFileParser.cs" />
     <Compile Include="Models\TabularFile.cs" />
     <Compile Include="Models\IniFile.cs" />
     <Compile Include="Models\CfgFile.cs" />
     <Compile Include="Models\RawTextFile.cs" />
+    <Compile Include="Models\QuestSystemFile.cs" />
     <Compile Include="Catalogs\MapNames.cs" />
     <Compile Include="Catalogs\ItemCatalog.cs" />
     <Compile Include="Catalogs\MonsterCatalog.cs" />
