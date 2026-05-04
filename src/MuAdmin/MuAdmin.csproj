@@ -87,6 +87,12 @@
     <Compile Include="Controls\IniEditor.Designer.cs">
       <DependentUpon>IniEditor.cs</DependentUpon>
     </Compile>
+    <Compile Include="Controls\QuestSystemEditor.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Controls\QuestSystemEditor.Designer.cs">
+      <DependentUpon>QuestSystemEditor.cs</DependentUpon>
+    </Compile>
     <Compile Include="Controls\RawTextEditor.cs">
       <SubType>UserControl</SubType>
     </Compile>
