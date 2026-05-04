@@ -1,0 +1,69 @@
+//--------------------------------------//
+// Drop Options                         //
+//--------------------------------------//
+1
+//	 Name		ZenAmount     Index    Type    Lvl   DropRate  Drop  ExcDrop
+       "BoxOfKundun2"	 50000	       0       0	0	100	100	 100
+end
+
+//--------------------------------------//
+// Item Drops                           //
+//--------------------------------------//
+2
+//	Type	Index	MinLvl	MaxLvl	Skill	Luck	Opt	Exc
+
+	0	4	0	5	1	1	1	2 	// Sword of Assassin
+	0	5	0	5	1	1	1	2 	// Blade
+	0	6	0	5	1	1	1	2 	// Gladius
+	0	7	0	5	1	1	1	2 	// Falchion
+	1	2	0	5	1	1	1	2 	// Double Axe
+	1	3	0	5	1	1	1	2 	// Tomahawk
+	2	3	0	5	1	1	1	2 	// Great Hammer
+	2	4	0	5	1	1	1	2 	// Crystal Morning Star
+	2	5	0	5	1	1	1	2 	// Crystal Sword
+	3	2	0	5	1	1	1	2 	// Dragon Lance
+	3	3	0	5	1	1	1	2 	// Giant Trident
+	3	4	0	5	1	1	1	2 	// Serpent Spear
+	4	3	0	5	1	1	1	2 	// Battle Bow
+	4	4	0	5	1	1	1	2 	// Tiger Bow
+	4	10	0	5	1	1	1	2 	// Arquebus
+	4	11	0	5	1	1	1	2 	// Light Crossbow
+	5	2	0	5	1	1	1	2 	// Serpent Staff
+	5	3	0	5	1	1	1	2 	// Thunder Staff
+	5	4	0	5	1	1	1	2 	// Gorgon Staff
+	6	2	0	5	1	1	1	2 	// Kite Shield
+	6	3	0	5	1	1	1	2 	// Elven Shield
+	6	4	0	5	1	1	1	2 	// Buckler
+	6	5	0	5	1	1	1	2 	// Dragon Slayer Shield
+	6	6	0	5	1	1	1	2 	// Skull Shield
+	7	4	0	5	1	1	1	2 	// bone Helm
+	7	6	0	5	1	1	1	2 	// Scale Helm
+	7	7	0	5	1	1	1	2 	// Sphinx Helm
+	7	8	0	5	1	1	1	2 	// brass Helm
+	7	11	0	5	1	1	1	2 	// Silk Helm
+	7	12	0	5	1	1	1	2 	// Wind Helm
+	8	4	0	5	1	1	1	2 	// bone Armor
+	8	6	0	5	1	1	1	2 	// Scale Armor
+	8	7	0	5	1	1	1	2 	// Sphinx Armor
+	8	8	0	5	1	1	1	2 	// brass Armor
+	8	11	0	5	1	1	1	2 	// Silk Armor
+	8	12	0	5	1	1	1	2 	// Wind Armor
+	9	4	0	5	1	1	1	2 	// bone Pants
+	9	6	0	5	1	1	1	2 	// Scale Pants
+	9	7	0	5	1	1	1	2 	// Sphinx Pants
+	9	8	0	5	1	1	1	2 	// brass Pants
+	9	11	0	5	1	1	1	2 	// Silk Pants
+	9	12	0	5	1	1	1	2 	// Wind Pants
+	10	4	0	5	1	1	1	2 	// bone Gloves
+	10	6	0	5	1	1	1	2 	// Scale Gloves
+	10	7	0	5	1	1	1	2 	// Sphinx Gloves
+	10	8	0	5	1	1	1	2 	// brass Gloves
+	10	11	0	5	1	1	1	2 	// Silk Gloves
+	10	12	0	5	1	1	1	2 	// Wind Gloves
+	11	4	0	5	1	1	1	2 	// bone boots
+	11	6	0	5	1	1	1	2 	// Scale boots
+	11	7	0	5	1	1	1	2 	// Sphinx boots
+	11	8	0	5	1	1	1	2 	// brass boots
+	11	11	0	5	1	1	1	2 	// Silk boots
+	11	12	0	5	1	1	1	2 	// Wind boots
+end

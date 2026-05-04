@@ -1,0 +1,61 @@
+//--------------------------------------//
+// Drop Options                         //
+//--------------------------------------//
+1
+//	 Name		ZenAmount     Index    Type    Lvl   DropRate  Drop  ExcDrop
+       "BoxOfKundun5"	 50000	       14       11	12	100	100	 100
+end
+
+//--------------------------------------//
+// Item Drops                           //
+//--------------------------------------//
+2
+//	Type	Index	MinLvl	MaxLvl	Skill	Luck	Opt	Exc
+	0	20	0	5	1	1	1	2	// Knight Blade
+	0	21	0	5	1	1	1	2	// Black Reign Blade
+	0	22	0	5	1	1	1	2	// Bone Blade
+	0	23	0	5	1	1	1	2	// Explosion Blade
+	0	24	0	5	1	1	1	2	// DayBreak
+	0	25	0	5	1	1	1	2	// Sword Dancer
+	2	21	0	5	1	1	1	2	// Rune Blade
+	1	8	0	5	1	1	1	2	// Crescent Axe
+	2	13	0	5	1	1	1	2	// Scepter of Archangel
+	2	14	0	5	1	1	1	2	// Solay Scepter
+	2	15	0	5	1	1	1	2	// Shining Scepter
+	3	8	0	5	1	1	1	2	// Great Scythe
+	3	9	0	5	1	1	1	2	// Bill of Balrog
+	3	10	0	5	1	1	1	2	// Dragon Spear
+	4	19	0	5	1	1	1	2	// Great Reign Crossbow
+	4	20	0	5	1	1	1	2	// Arrow Viper Bow
+	4	21	0	5	1	1	1	2	// Sylph Wind Bow
+	4	22	0	5	1	1	1	2	// Albatross Bow
+	5	11	0	5	1	1	1	2	// Kundun Staff
+	5	12	0	5	1	1	1	2	// Grand Viper Staff
+	5	13	0	5	1	1	1	2	// Platina Wing Staff
+	6	15	0	5	1	1	1	2	// Grand Soul Shield
+	6	16	0	5	1	1	1	2	// Elemental Shield
+	7	21	0	5	1	1	1	2	// Great Dragon Helm
+	7	22	0	5	1	1	1	2	// Dark Soul Helm
+	7	24	0	5	1	1	1	2	// Red Spirit Helm
+	7	28	0	5	1	1	1	2	// Dark Master Helm
+	8	21	0	5	1	1	1	2	// Great Dragon Armor
+	8	22	0	5	1	1	1	2	// Dark Soul Armor
+	8	24	0	5	1	1	1	2	// Red Spirit Armor
+	8	23	0	5	1	1	1	2	// Hurricane Armor
+	8	28	0	5	1	1	1	2	// Dark Master Armor
+	9	21	0	5	1	1	1	2	// Great Dragon Pants
+	9	22	0	5	1	1	1	2	// Dark Soul Pants
+	9	24	0	5	1	1	1	2	// Red Spirit Pants
+	9	23	0	5	1	1	1	2	// Hurricane Pants
+	9	28	0	5	1	1	1	2	// Dark Master Pants
+	10	21	0	5	1	1	1	2	// Great Dragon Gloves
+	10	22	0	5	1	1	1	2	// Dark Soul Gloves
+	10	24	0	5	1	1	1	2	// Red Spirit Gloves
+	10	23	0	5	1	1	1	2	// Hurricane Gloves
+	10	28	0	5	1	1	1	2	// Dark Master Gloves
+	11	21	0	5	1	1	1	2	// Great Dragon boots
+	11	22	0	5	1	1	1	2	// Dark Soul boots
+	11	24	0	5	1	1	1	2	// Red Spirit boots
+	11	23	0	5	1	1	1	2	// Hurricane boots
+	11	28	0	5	1	1	1	2	// Dark Master boots
+end

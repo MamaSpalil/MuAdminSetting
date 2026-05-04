@@ -1,0 +1,56 @@
+// Box of Kundun +1
+
+//--------------------------------------//
+// Drop Options                         //
+//--------------------------------------//
+1
+//        Name         ZenAmount    ItemType  Index   ItemLvl DropRate NormDrop ExcDrop
+     "BoxOfKundun1"	  0		0	0	 0	 100	 100	  100
+end
+
+//--------------------------------------//
+// Item Drops                           //
+//--------------------------------------//
+2
+//  ItemType  Index  MinLvl MaxLvl    Skill    Luck   Option  Excellent
+	0	0	0	5	1	1	1	6	// Kris
+	0	1	0	5	1	1	1	6	// Short Sword
+	0	2	0	5	1	1	1	6	// Rapier
+	0	3	0	5	1	1	1	6	// Katana
+	1	0	0	5	1	1	1	6	// Small Axe
+	1	1	0	5	1	1	1	6	// Hand Axe
+	2	0	0	5	1	1	1	6	// Mace
+	2	1	0	5	1	1	1	6	// Morning Star
+	2	2	0	5	1	1	1	6	// Flail
+	3	0	0	5	1	1	1	6	// Light Spear
+	3	1	0	5	1	1	1	6	// Spear
+	4	0	0	5	1	1	1	6	// Short Bow
+	4	1	0	5	1	1	1	6	// Bow
+	4	2	0	5	1	1	1	6	// Elven Bow
+	4	8	0	5	1	1	1	6	// Crossbow
+	4	9	0	5	1	1	1	6	// Golden Crossbow
+	5	0	0	5	1	1	1	6	// Skull Staff
+	5	1	0	5	1	1	1	6	// Angelic Staff
+	6	0	0	5	1	1	1	6	// Small Shield
+	6	1	0	5	1	1	1	6	// Horn Shield
+	7	0	0	5	1	1	1	6	// bronze Helm
+	7	2	0	5	1	1	1	6	// Pad Helm
+	7	5	0	5	1	1	1	6	// Leather Helm
+	7	10	0	5	1	1	1	6	// Vine Helm
+	8	0	0	5	1	1	1	6	// bronze Armor
+	8	2	0	5	1	1	1	6	// Pad Armor
+	8	5	0	5	1	1	1	6	// Leather Armor
+	8	10	0	5	1	1	1	6	// Vine Armor
+	9	0	0	5	1	1	1	6	// bronze Pants
+	9	2	0	5	1	1	1	6	// Pad Pants
+	9	5	0	5	1	1	1	6	// Leather Pants
+	9	10	0	5	1	1	1	6	// Vine Pants
+	10	0	0	5	1	1	1	6	// bronze Gloves
+	10	2	0	5	1	1	1	6	// Pad Gloves
+	10	5	0	5	1	1	1	6	// Leather Gloves
+	10	10	0	5	1	1	1	6	// Vine Gloves
+	11	0	0	5	1	1	1	6	// bronze boots
+	11	2	0	5	1	1	1	6	// Pad boots
+	11	5	0	5	1	1	1	6	// Leather boots
+	11	10	0	5	1	1	1	6	// Vine boots
+end

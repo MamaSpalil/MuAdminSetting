@@ -1,0 +1,51 @@
+// Red Dragon
+
+//--------------------------------------//
+// Map Drop                             //
+//--------------------------------------//
+0
+//  MapNumber  Drop   MinLvl   MaxLvl
+	0	0	0	1000	// Lorencia
+	1	0	0	1000	// Dungeon
+	2	0	0	1000	// Devias
+	3	0	0	1000	// Noria
+	4	0	0	1000	// LostTower
+	5	0	0	1000	// Exile
+	6	0	0	1000	// Arena
+	7	0	0	1000	// Atlans
+	8	0	0	1000	// Tarkan
+	9	0	0	1000	// DevilSquare
+	10	0	0	1000	// Icarus
+end
+
+//--------------------------------------//
+// Drop Options                         //
+//--------------------------------------//
+1
+//	 Name		ZenAmount     Index    Type    Lvl   DropRate  Drop  ExcDrop
+       "RedDragon"	 50000	       0       0	0	0	100	 50
+end
+
+//--------------------------------------//
+// Item Drops                           //
+//--------------------------------------//
+2
+//	Type	Index	MinLvl	MaxLvl	Skill	Luck	Opt	Exc
+	12	15	0	0	0	0	0	0 //Jewel of Chaos
+	14	13	0	0	0	0	0	0 //Jewel of Bless
+	14	14	0	0	0	0	0	0 //Jewel of Soul
+	12	15	0	0	0	0	0	0 //Jewel of Chaos
+	12	15	0	0	0	0	0	0 //Jewel of Chaos
+	12	15	0	0	0	0	0	0 //Jewel of Chaos
+	12	15	0	0	0	0	0	0 //Jewel of Chaos
+	12	15	0	0	0	0	0	0 //Jewel of Chaos
+	12	15	0	0	0	0	0	0 //Jewel of Chaos
+	12	15	0	0	0	0	0	0 //Jewel of Chaos
+	12	15	0	0	0	0	0	0 //Jewel of Chaos
+	14	13	0	0	0	0	0	0 //Jewel of Bless
+	14	14	0	0	0	0	0	0 //Jewel of Soul
+	12	15	0	0	0	0	0	0 //Jewel of Chaos
+	14	13	0	0	0	0	0	0 //Jewel of Bless
+	14	14	0	0	0	0	0	0 //Jewel of Soul
+	14	16	0	0	0	0	0	0 //Jewel of Life
+end

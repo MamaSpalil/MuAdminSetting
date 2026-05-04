@@ -1,0 +1,120 @@
+//////////////////////////////////////////////////////////////////////////////////
+// Project Author : mu-dev.ru						//
+// Last Edit Date : 40 / 02 / 2016                                              //
+//////////////////////////////////////////////////////////////////////////////////
+
+// CC BOX
+//--------------------------------------//
+// Map Drop                             //
+//--------------------------------------//
+0
+//  MapNumber  Drop   MinLvl   MaxLvl
+	0	0	0	1000	// Lorencia
+	1	0	0	1000	// Dungeon
+	2	0	0	1000	// Devias
+	3	0	0	1000	// Noria
+	4	0	0	1000	// LostTower
+	5	0	0	1000	// Exile
+	6	0	0	1000	// Arena
+	7	0	0	1000	// Atlans
+	8	0	0	1000	// Tarkan
+	9	0	0	1000	// DevilSquare
+	10	0	0	1000	// Icarus
+end
+
+//--------------------------------------//
+// Drop Options                         //
+//--------------------------------------//
+1
+//	 Name		ZenAmount     Index    Type    Lvl   DropRate  Drop  ExcDrop
+        "GMBox"	1000000		0       0	0	0	100	1
+end
+
+//--------------------------------------//
+// Item Drops                           //
+//--------------------------------------//
+2
+//	Type	Index	MinLvl	MaxLvl	Skill	Luck	Opt	Exc
+
+	0	17	0	13	1	1	8	63  // Excellent Dark Breaker
+	0	31	0	13	1	1	8	63  // Excellent Rune Blade
+	0	21	0	13	1	1	8	63  // Dark Reign Blade
+	0	22	0	13	1	1	8	63  // Bone Blade
+	0	23	0	13	1	1	8	63  // Explosion Blade
+	0	24	0	13	1	1	8	63  // Daybreak
+	0	25	0	13	1	1	8	63  // Sword Dancer
+	2	14	0	13	1	1	8	63  // Solay Scepter
+	2	15	0	13	1	1	8	63  // Shining Scepter
+	4	19	0	13	1	1	8	63  // Excellent Great Reign Crossbow
+	4	21	0	13	1	1	8	63  // Sylph Wind Bow
+	4	22	0	13	1	1	8	63  // Albatross Bow
+	5	9	0	13	1	1	8	63  // Excellent Dragon Soul Staff
+	5	12	0	13	1	1	8	63  // Grand Viper Staff
+	5	13	0	13	1	1	8	63  // Platina Wing Staff
+	0	16	0	13	1	1	8	63  // Excellent Sword of Destruction
+	2	10	0	13	1	1	8	63  // Excellent Great Scepter
+	3	10	0	13	1	1	8	63  // Excellent Dragon Spear
+	4	16	0	13	1	1	8	63  // Excellent Saint Crossbow
+	4	17	0	13	1	1	8	63  // Excellent Celestial Bow
+	5	8	0	13	1	1	8	63  // Excellent Staff of Destruction
+	7	29	0	13	0	1	8	63  // Dragon Knight Helm
+	7	30	0	13	0	1	8	63  // Venom Mist Helm
+	7	31	0	13	0	1	8	63  // Sylphid Ray Helm
+	7	33	0	13	0	1	8	63  // Sunlight Helm
+	7	34	0	13	0	1	8	63  // Excellent Ashcrow Helm
+	7	35	0	13	0	1	8	63  // Excellent Eclipse Helm
+	7	36	0	13	0	1	8	63  // Excellent Iris Helm
+	7	38	0	13	0	1	8	63  // Excellent Glorious Helm
+	7	16	0	13	0	1	8	63  // Excellent Black Dragon Helm
+	7	18	0	13	0	1	8	63  // Excellent Grand Soul Helm
+	7	19	0	13	0	1	8	63  // Excellent Divine Helm
+	8	29	0	13	0	1	8	63  // Dragon Knight Armor
+	8	30	0	13	0	1	8	63  // Venom Mist Armor
+	8	31	0	13	0	1	8	63  // Sylphid Ray Armor
+	8	32	0	13	0	1	8	63  // Volcano Armor
+	8	33	0	13	0	1	8	63  // Sunlight Armor
+	8	34	0	13	0	1	8	63  // Ashcrow Armor
+	8	35	0	13	0	1	8	63  // Eclipse Armor
+	8	36	0	13	0	1	8	63  // Iris Armor
+	8	37	0	13	0	1	8	63  // Valiant Armor
+	8	38	0	13	0	1	8	63  // Glorious Armor
+	8	16	0	13	0	1	8	63  // Black Dragon Armor
+	8	18	0	13	0	1	8	63  // Grand Soul Armor
+	8	19	0	13	0	1	8	63  // Divine Armor
+	9	29	0	13	0	1	8	63  // Dragon Knight Pants
+	9	30	0	13	0	1	8	63  // Venom Mist Pants
+	9	31	0	13	0	1	8	63  // Sylphid Ray Pants
+	9	32	0	13	0	1	8	63  // Volcano Pants
+	9	33	0	13	0	1	8	63  // Sunlight Pants
+	9	34	0	13	0	1	8	63  // Ashcrow Pants
+	9	35	0	13	0	1	8	63  // Eclipse Pants
+	9	36	0	13	0	1	8	63  // Iris Pants
+	9	37	0	13	0	1	8	63  // Valiant Pants
+	9	38	0	13	0	1	8	63  // Glorious Pants
+	9	16	0	13	0	1	8	63  // Excellent Black Dragon Pants
+	9	18	0	13	0	1	8	63  // Excellent Grand Soul Pants
+	9	19	0	13	0	1	8	63  // Excellent Divine Pants
+	10	29	0	13	0	1	8	63  // Dragon Knight 
+	10	30	0	13	0	1	8	63  // Venom Mist Gloves
+	10	31	0	13	0	1	8	63  // Sylphid Ray Gloves
+	10	32	0	13	0	1	8	63  // Volcano Gloves
+	10	33	0	13	0	1	8	63  // Sunlight Gloves
+	10	34	0	13	0	1	8	63  // Excellent Ashcrow Gloves
+	10	35	0	13	0	1	8	63  // Excellent Eclipse Gloves
+	10	36	0	13	0	1	8	63  // Excellent Iris Gloves
+	10	37	0	13	0	1	8	63  // Excellent Valiant Gloves
+	10	38	0	13	0	1	8	63  // Excellent Glorious Gloves
+	10	16	0	13	0	1	8	63  // Excellent Black Dragon Gloves
+	10	18	0	13	0	1	8	63  // Excellent Grand Soul Gloves
+	10	19	0	13	0	1	8	63  // Excellent Divine Gloves
+	11	29	0	13	0	1	8	63  // Dragon Knight Boots
+	11	30	0	13	0	1	8	63  // Venom Mist Boots
+	11	31	0	13	0	1	8	63  // Sylphid Ray Boots
+	11	32	0	13	0	1	8	63  // Volcano Boots
+	11	33	0	13	0	1	8	63  // Sunlight Boots
+	11	34	0	13	0	1	8	63  // Excellent Ashcrow Boots
+	11	35	0	13	0	1	8	63  // Excellent Eclipse Boots
+	11	36	0	13	0	1	8	63  // Excellent Iris Boots
+	11	37	0	13	0	1	8	63  // Excellent Valiant Boots
+	11	38	0	13	0	1	8	63  // Excellent Glorious Boots
+end

@@ -1,0 +1,39 @@
+//--------------------------------------//
+// Drop Options                         //
+//--------------------------------------//
+1
+//	 Name		ZenAmount     Index    Type    Lvl   DropRate  Drop  ExcDrop
+       "HeartOfLord"	 50000	       14       11	13	10	90	 1
+end
+
+//--------------------------------------//
+// Item Drops                           //
+//--------------------------------------//
+2
+//	Type	Index	MinLvl	MaxLvl	Skill	Luck	Opt	Exc
+	7	25	0	7	1	1	1	1	// Light Plate Helm
+	8	25	0	7	1	1	1	1	// Light Plate Armor
+	9	25	0	7	1	1	1	1	// Light Plate Pants
+	10	25	0	7	1	1	1	1	// Light Plate Gloves
+	11	25	0	7	1	1	1	1	// Light Plate Boots
+	7	26	0	7	1	1	1	1	// Adamantine Helm
+	8	26	0	7	1	1	1	1	// Adamantine Armor
+	9	26	0	7	1	1	1	1	// Adamantine Pants
+	10	26	0	7	1	1	1	1	// Adamantine Gloves
+	11	26	0	7	1	1	1	1	// Adamantine Boots
+	7	27	0	7	1	1	1	1	// Dark Steel Helm
+	8	27	0	7	1	1	1	1	// Dark Steel Armor
+	9	27	0	7	1	1	1	1	// Dark Steel Pants
+	10	27	0	7	1	1	1	1	// Dark Steel Gloves
+	11	27	0	7	1	1	1	1	// Dark Steel Boots
+	7	28	0	7	1	1	1	1	// Dark Master Helm
+	8	28	0	7	1	1	1	1	// Dark Master Armor
+	9	28	0	7	1	1	1	1	// Dark Master Pants
+	10	28	0	7	1	1	1	1	// Dark Master Gloves
+	11	28	0	7	1	1	1	1	// Dark Master Boots
+	2	8	0	7	1	1	1	1	// Battle Scepter
+	2	9	0	7	1	1	1	1	// Master Scepter
+	2	10	0	7	1	1	1	1	// Great Scepter
+	2	11	0	7	1	1	1	1	// Lord Scepter
+	2	12	0	7	1	1	1	1	// Great Lord Scepter
+end

@@ -1,0 +1,73 @@
+//--------------------------------------//
+// Drop Options                         //
+//--------------------------------------//
+1
+//	 Name		ZenAmount     Index    Type    Lvl   DropRate  Drop  ExcDrop
+       "BoxOfKundun4"	 50000	       0       0	0	100	100	 100
+end
+
+//--------------------------------------//
+// Item Drops                           //
+//--------------------------------------//
+2
+//	Type	Index	MinLvl	MaxLvl	Skill	Luck	Opt	Exc
+	0	14	0	5	1	1	1	2	// Lightning Sword
+	0	15	0	5	1	1	1	2	// Giant Sword
+	0	16	0	5	1	1	1	2	// Sword of Destruction
+	0	17	0	5	1	1	1	2	// Spirit Sword
+	0	18	0	5	1	1	1	2	// Thunder Blade
+	0	19	0	5	1	1	1	2	// Sword of Archangel
+	1	6	0	5	1	1	1	2	// Nikkea Axe
+	1	7	0	5	1	1	1	2	// Larkan Axe
+	2	9	0	5	1	1	1	2	// Master Scepter
+	2	10	0	5	1	1	1	2	// Great Scepter
+	2	11	0	5	1	1	1	2	// Lord Scepter
+	2	12	0	5	1	1	1	2	// Great Lord Scepter
+	3	5	0	5	1	1	1	2	// Double Poleaxe
+	3	6	0	5	1	1	1	2	// Halberd
+	3	7	0	5	1	1	1	2	// Berdysh
+	4	16	0	5	1	1	1	2	// Saint Crossbow
+	4	17	0	5	1	1	1	2	// Celestial Bow
+	4	18	0	5	1	1	1	2	// Crossbow of Archangel
+	5	8	0	5	1	1	1	2	// Staff of Destruction
+	5	9	0	5	1	1	1	2	// Dragon Soul Staff
+	5	10	0	5	1	1	1	2	// Staff of Archangel
+	6	11	0	5	1	1	1	2	// Serpent Shield
+	6	12	0	5	1	1	1	2	// Bronze Shield
+	6	13	0	5	1	1	1	2	// Chaos Dragon Shield
+	6	14	0	5	1	1	1	2	// Legendary Shield
+	7	16	0	5	1	1	1	2	// Black Dragon Helm
+	7	17	0	5	1	1	1	2	// Dark Phoenix Helm
+	7	18	0	5	1	1	1	2	// Grand Soul Helm
+	7	19	0	5	1	1	1	2	// Divine Helm
+	7	26	0	5	1	1	1	2	// Adamantine Helm
+	7	27	0	5	1	1	1	2	// Dark Steel Helm
+	8	16	0	5	1	1	1	2	// Black Dragon Armor
+	8	17	0	5	1	1	1	2	// Dark Phoenix Armor
+	8	18	0	5	1	1	1	2	// Grand Soul Armor
+	8	19	0	5	1	1	1	2	// Divine Armor
+	8	26	0	5	1	1	1	2	// Adamantine Armor
+	8	27	0	5	1	1	1	2	// Dark Steel Armor
+	8	20	0	5	1	1	1	2	// Thunder Hawk Armor
+	9	16	0	5	1	1	1	2	// Black Dragon Pants
+	9	17	0	5	1	1	1	2	// Dark Phoenix Pants
+	9	18	0	5	1	1	1	2	// Grand Soul Pants
+	9	19	0	5	1	1	1	2	// Divine Pants
+	9	26	0	5	1	1	1	2	// Adamantine Pants
+	9	27	0	5	1	1	1	2	// Dark Steel Pants
+	9	20	0	5	1	1	1	2	// Thunder Hawk Pants
+	10	16	0	5	1	1	1	2	// Black Dragon Gloves
+	10	17	0	5	1	1	1	2	// Dark Phoenix Gloves
+	10	18	0	5	1	1	1	2	// Grand Soul Gloves
+	10	19	0	5	1	1	1	2	// Divine Gloves
+	10	26	0	5	1	1	1	2	// Adamantine Gloves
+	10	27	0	5	1	1	1	2	// Dark Steel Gloves
+	10	20	0	5	1	1	1	2	// Thunder Hawk Gloves
+	11	16	0	5	1	1	1	2	// Black Dragon boots
+	11	17	0	5	1	1	1	2	// Dark Phoenix boots
+	11	18	0	5	1	1	1	2	// Grand Soul boots
+	11	19	0	5	1	1	1	2	// Divine boots
+	11	26	0	5	1	1	1	2	// Adamantine boots
+	11	27	0	5	1	1	1	2	// Dark Steel boots
+	11	20	0	5	1	1	1	2	// Thunder Hawk boots
+end

@@ -1,0 +1,68 @@
+// Star of Sacred Birth
+
+//--------------------------------------//
+// Map Drop                             //
+//--------------------------------------//
+0
+//  MapNumber  Drop   MinLvl   MaxLvl
+	0	0	0	1000	// Lorencia
+	1	0	0	1000	// Dungeon
+	2	0	0	1000	// Devias
+	3	0	0	1000	// Noria
+	4	0	0	1000	// LostTower
+	5	0	0	1000	// Exile
+	6	0	0	1000	// Arena
+	7	0	0	1000	// Atlans
+	8	0	0	1000	// Tarkan
+	9	0	0	1000	// DevilSquare
+	10	0	0	1000	// Icarus
+end
+
+//--------------------------------------//
+// Drop Options                         //
+//--------------------------------------//
+1
+//	 Name		ZenAmount     Index    Type    Lvl   DropRate  Drop  ExcDrop
+       "StarOfXMas"	500000		14	11	 1	 10	  1000	  0
+end
+
+//--------------------------------------//
+// Item Drops                           //
+//--------------------------------------//
+2
+//	Type	Index	MinLvl	MaxLvl	Skill	Luck	Opt	Exc
+      	0	20	7    10  	1	1	1	0	// Knight Blade
+	3	10	7    10  	1	1	1	0	// Dragon Spear
+	0	17	7    10 	1	1	1	0	// Dark Breaker
+	0	21	7    10  	1	1	1	0	// Dark Reign Blade
+	2	12	7    10 	1	1	1	0	// Great Lord Scepter
+	5	11	7    10 	1	1	1	0	// Staff of Kundun
+	4	19	7    10 	1	1	1	0	// Great Reign Crossbow
+	4	20	7    10 	1	1	1	0	// Arrow Viper Bow
+	6	13	7    10 	1	1	1	0	// Dragon Shield
+	6	15	7    10  	1	1	1	0	// Grand Soul Shield
+	7	21	7    10  	0       1	1	0	// Great Dragon Helm
+	7	22	7    10  	0	1	1	0	// Dark Soul Helm
+	7	24	7    10  	0	1	1	0	// Red Spirit Helm
+	7	28	7    10  	0	1	1	0	// Dark Master Mask
+	8	21	7    10  	0	1	1	0	// Great Dragon Armor
+	8	22	7    10  	0	1	1	0	// Dark Soul Armor
+	8	23	7    10  	0	1	1	0	// Hurricane Armor
+	8	24	7    10  	0	1	1	0	// Red Spirit Armor
+	8	28	7    10  	0	1	1	0	// Dark Master Armor
+	9	21	7    10  	0	1	1	0	// Great Dragon Pants
+	9	22	7    10  	0	1	1	0	// Dark Soul Pants
+	9	23	7    10  	0	1	1	0	// Hurricane Pants
+	9	24	7    10  	0	1	1	0	// Red Spirit Pants
+	9	28	7    10  	0	1	1	0	// Dark Master Pants
+	10	21	7    10  	0	1	1	0	// Great Dragon Gloves
+	10	22	7    10  	0	1	1	0	// Dark Soul Gloves
+	10	23	7    10 	0	1	1	0	// Hurricane Gloves
+	10	24	7    10  	0	1	1	0	// Red Spirit Gloves
+	10	28	7    10  	0	1	1	0	// Dark Master Gloves
+	11	21	7    10  	0 	1	1	0	// Great Dragon Boots
+	11	22	7    10  	0	1	1	0	// Dark Soul Boots
+	11	23	7    10  	0	1	1	0	// Hurricane Boots
+	11	24	7    10  	0	1	1	0	// Red Spirit Boots
+	11	28	7    10  	0	1	1	0	// Dark Master Boots
+end

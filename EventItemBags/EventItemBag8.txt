@@ -1,0 +1,102 @@
+//--------------------------------------//
+// Drop Options                         //
+//--------------------------------------//
+1
+//	 Name		ZenAmount     Index    Type    Lvl   DropRate  Drop  ExcDrop
+       "SilverMedal"	 50000	       14       11	5	10	90	 1
+end
+
+//--------------------------------------//
+// Item Drops                           //
+//--------------------------------------//
+2
+//	Type	Index	MinLvl	MaxLvl	Skill	Luck	Opt	Exc
+	14	13	0	0	0	0	0	0	// Jewel of Bless
+	14	14	0	0	0	0	0	0	// Jewel of Soul 
+	14	16	0	0	0	0	0	0	// Jewel of Life
+	14	22	0	0	0	0	0	0	// Jewel of Creation
+	12	15	0	0	0	0	0	0	// Jewel of Chaos
+	7	5	5	9	1	1	1	0	// Leather Helm
+	8	5	5	9	1	1	1	0	// Leather Armor
+	9	5	5	9	1	1	1	0	// Leather Pants
+	10	5	5	9	1	1	1	0	// Leather Gloves
+	11	5	5	9	1	1	1	0	// Leather Boots
+	7	0	5	9	1	1	1	0	// Bronze Helm
+	8	0	5	9	1	1	1	0	// Bronze Armor
+	9	0	5	9	1	1	1	0	// Bronze Pants
+	10	0	5	9	1	1	1	0	// Bronze Gloves
+	11	0	5	9	1	1	1	0	// Bronze Boots
+	7	6	5	9	1	1	1	0	// Scale Helm
+	8	6	5	9	1	1	1	0	// Scale Armor
+	9	6	5	9	1	1	1	0	// Scale Pants
+	10	6	5	9	1	1	1	0	// Scale Gloves
+	11	6	5	9	1	1	1	0	// Scale Boots
+	7	2	5	9	1	1	1	0	// Pad Helm
+	8	2	5	9	1	1	1	0	// Pad Armor
+	9	2	5	9	1	1	1	0	// Pad Pants
+	10	2	5	9	1	1	1	0	// Pad Gloves
+	11	2	5	9	1	1	1	0	// Pad Boots
+	7	4	5	9	1	1	1	0	// Bone Helm
+	8	4	5	9	1	1	1	0	// Bone Armor
+	9	4	5	9	1	1	1	0	// Bone Pants
+	10	4	5	9	1	1	1	0	// Bone Gloves
+	11	4	5	9	1	1	1	0	// Bone Boots
+	7	7	5	9	1	1	1	0	// Sphinx Helm
+	8	7	5	9	1	1	1	0	// Sphinx Armor
+	9	7	5	9	1	1	1	0	// Sphinx Pants
+	10	7	5	9	1	1	1	0	// Sphinx Gloves
+	11	7	5	9	1	1	1	0	// Sphinx Boots
+	7	10	5	9	1	1	1	0	// Vine Helm
+	8	10	5	9	1	1	1	0	// Vine Armor
+	9	10	5	9	1	1	1	0	// Vine Pants
+	10	10	5	9	1	1	1	0	// Vine Gloves
+	11	10	5	9	1	1	1	0	// Vine Boots
+	7	11	5	9	1	1	1	0	// Silk Helm
+	8	11	5	9	1	1	1	0	// Silk Armor
+	9	11	5	9	1	1	1	0	// Silk Pants
+	10	11	5	9	1	1	1	0	// Silk Gloves
+	11	11	5	9	1	1	1	0	// Silk Boots
+	7	12	5	9	1	1	1	0	// Wind Helm
+	8	12	5	9	1	1	1	0	// Wind Armor	
+	9	12	5	9	1	1	1	0	// Wind Pants
+	10	12	5	9	1	1	1	0	// Wind Gloves
+	11	12	5	9	1	1	1	0	// Wind Boots
+	7	25	5	9	1	1	1	0	// Light Plate Helm
+	8	25	5	9	1	1	1	0	// Light Plate Armor
+	9	25	5	9	1	1	1	0	// Light Plate Pants
+	10	25	5	9	1	1	1	0	// Light Plate Gloves
+	11	25	5	9	1	1	1	0	// Light Plate Boots
+	6	0	5	9	1	1	1	0	// Small Shield
+	6	4	5	9	1	1	1	0	// Buckler
+	6	1	5	9	1	1	1	0	// Horn Shield
+	6	2	5	9	1	1	1	0	// Kite Shield
+	0	0	5	9	1	1	1	0	// Short Sword
+	0	1	5	9	1	1	1	0	// Kris
+	0	2	5	9	1	1	1	0	// Rapier
+	0	4	5	9	1	1	1	0	// Sword Of Assassin
+	1	0	5	9	1	1	1	0	// Small Axe
+	1	1	5	9	1	1	1	0	// Hand Axe
+	1	2	5	9	1	1	1	0	// Double Axe
+	1	3	5	9	1	1	1	0	// Tomahawk
+	3	5	5	9	1	1	1	0	// Double Poleaxe
+	3	2	5	9	1	1	1	0	// Dragon Lance
+	3	6	5	9	1	1	1	0	// Helberd
+	3	1	5	9	1	1	1	0	// Spear
+	2	0	5	9	1	1	1	0	// Mace
+	2	1	5	9	1	1	1	0	// Morning Star
+	2	2	5	9	1	1	1	0	// Flail
+	5	0	5	9	1	1	1	0	// Skull Staff
+	5	1	5	9	1	1	1	0	// Angelic Staff
+	5	2	5	9	1	1	1	0	// Serpent Staff
+	5	3	5	9	1	1	1	0	// Lightning Staff
+	2	2	5	9	1	1	1	0	// Short Bow
+	4	1	5	9	1	1	1	0	// Bow
+	4	2	5	9	1	1	1	0	// Elven Bow
+	4	3	5	9	1	1	1	0	// Battle Bow
+	4	19	5	9	1	1	1	0	// Great Reign Crossbow
+	4	8	5	9	1	1	1	0	// Crossbow
+	4	9	5	9	1	1	1	0	// Golden Crossbow
+	4	10	5	9	1	1	1	0	// Arquebus
+	2	8	5	9	1	1	1	0	// Battle Scepter
+	2	9	5	9	1	1	1	0	// Master Scepter
+end

@@ -1,0 +1,74 @@
+//--------------------------------------//
+// Drop Options                         //
+//--------------------------------------//
+1
+//	 Name		ZenAmount     Index    Type    Lvl   DropRate  Drop  ExcDrop
+       "BoxOfKundun3"	 50000	       14       11	10	100	100	 100
+end
+
+//--------------------------------------//
+// Item Drops                           //
+//--------------------------------------//
+2
+//	Type	Index	MinLvl	MaxLvl	Skill	Luck	Opt	Exc
+	0	8	0	5	1	1	1	2	// Serpent Sword
+	0	9	0	5	1	1	1	2	// Salamander
+	0	10	0	5	1	1	1	2	// Light Saber
+	0	11	0	5	1	1	1	2	// Legendary Sword
+	0	12	0	5	1	1	1	2	// Double Blade
+	0	13	0	5	1	1	1	2	// Helical Sword
+	1	4	0	5	1	1	1	2	// Elven Axe
+	1	5	0	5	1	1	1	2	// Battle Axe
+	2	6	0	5	1	1	1	2	// Chaos Dragon Axe
+	2	7	0	5	1	1	1	2	// Elemental Mace
+	2	8	0	5	1	1	1	2	// Battle Scepter
+	3	6	0	5	1	1	1	2	// Double Poleaxe
+	3	5	0	5	1	1	1	2	// Halberd
+	4	5	0	5	1	1	1	2	// Silver Bow
+	4	6	0	5	1	1	1	2	// Chaos Nature Bow
+	4	12	0	5	1	1	1	2	// Serpent Crossbow
+	4	13	0	5	1	1	1	2	// Bluewing Crossbow
+	4	14	0	5	1	1	1	2	// Aquagold Crossbow
+	5	5	0	5	1	1	1	2	// Legendary Staff
+	5	6	0	5	1	1	1	2	// Staff of Destruction
+	5	7	0	5	1	1	1	2	// Chaos Lightning Staff
+	6	7	0	5	1	1	1	2	// Spike Shield
+	6	8	0	5	1	1	1	2	// Tower Shield
+	6	9	0	5	1	1	1	2	// Plate Shield
+	6	10	0	5	1	1	1	2	// Large Round Shield
+	7	1	0	5	1	1	1	2	// Dragon Helm
+	7	3	0	5	1	1	1	2	// Legendary Helm
+	7	13	0	5	1	1	1	2	// Spirit Helm
+	7	14	0	5	1	1	1	2	// Guardian Helm
+	7	25	0	5	1	1	1	2	// Light Plate Helm
+	7	9	0	5	1	1	1	2	// Plate Helm
+	8	1	0	5	1	1	1	2	// Dragon Armor
+	8	3	0	5	1	1	1	2	// Legendary Armor
+	8	13	0	5	1	1	1	2	// Spirit Armor
+	8	14	0	5	1	1	1	2	// Guardian Armor
+	8	25	0	5	1	1	1	2	// Light Plate Armor
+	8	15	0	5	1	1	1	2	// Storm Crow Armor
+	8	9	0	5	1	1	1	2	// Plate Armor
+	9	1	0	5	1	1	1	2	// Dragon Pants
+	9	3	0	5	1	1	1	2	// Legendary Pants
+	9	13	0	5	1	1	1	2	// Spirit Pants
+	9	14	0	5	1	1	1	2	// Guardian Pants
+	9	25	0	5	1	1	1	2	// Light Plate Pants
+	9	15	0	5	1	1	1	2	// Storm Crow Pants
+	9	9	0	5	1	1	1	2	// Plate Pants
+	10	1	0	5	1	1	1	2	// Dragon Gloves
+	10	3	0	5	1	1	1	2	// Legendary Gloves
+	10	13	0	5	1	1	1	2	// Spirit Gloves
+	10	14	0	5	1	1	1	2	// Guardian Gloves
+	10	25	0	5	1	1	1	2	// Light Plate Gloves
+	10	15	0	5	1	1	1	2	// Storm Crow Gloves
+	10	9	0	5	1	1	1	2	// Plate Gloves
+	11	1	0	5	1	1	1	2	// Dragon boots
+	11	3	0	5	1	1	1	2	// Legendary boots
+	11	13	0	5	1	1	1	2	// Spirit boots
+	11	14	0	5	1	1	1	2	// Guardian boots
+	11	25	0	5	1	1	1	2	// Light Plate boots
+	11	15	0	5	1	1	1	2	// Storm Crow boots
+	11	9	0	5	1	1	1	2	// Plate boots
+
+end
