@@ -1,0 +1,39 @@
+//////////////////////////////////////////////////////////////////////////////////
+// Project Author : (c) Eldoro                           						//
+// Project Info	  : ####                                         		        //
+// Last Edit Date : 07 / 03 / 2015                                              //
+//////////////////////////////////////////////////////////////////////////////////
+
+// Harold The Rogue Trader
+
+
+ 
+ 7 25 2 0 1 0 2 0  // Light Plate Helm
+ 7 26 2 0 1 0 2 0  // Adamantine  Helm
+ 7 27 2 0 1 0 2 0  // Dark Steel Helm
+ 7 28 2 0 1 0 2 0  // Dark Master  Helm
+ 
+ 8 25 2 0 1 0 2 0  // Light Plate Armor
+ 8 26 2 0 1 0 2 0  // Adamantine  Armor
+ 8 27 2 0 1 0 2 0  // Dark Steel Armor
+ 8 28 2 0 1 0 2 0  // Dark Master  Armor
+ 
+ 9 25 2 0 1 0 2 0  // Light Plate Pants
+ 9 26 2 0 1 0 2 0  // Adamantine  Pants
+ 9 27 2 0 1 0 2 0  // Dark Steel Pants
+ 9 28 2 0 1 0 2 0  // Dark Master Pants
+ 
+10 25 2 0 1 0 2 0  // Light Plate Gloves
+10 26 2 0 1 0 2 0  // Adamantine  Gloves
+10 27 2 0 1 0 2 0  // Dark Steel Gloves
+10 28 2 0 1 0 2 0  // Dark Master  Gloves
+
+11 25 2 0 1 0 2 0  // Light Plate Boots
+11 26 2 0 1 0 2 0  // Adamantine  Boots
+11 27 2 0 1 0 2 0  // Dark Steel Boots
+11 28 2 0 1 0 2 0  // Dark Master  Boots
+ 
+	
+
+
+end

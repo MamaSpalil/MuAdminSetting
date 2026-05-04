@@ -1,0 +1,11 @@
+//Propensity	AddDef	AddLife	AddDamage
+0
+1	100	100	100//light
+2	70	100	130//chaos
+3	120	110	70//darkness
+4	100	120	80//harmony
+end
+
+//Propensity	StartH	StartM	EndH	EndM
+1
+end

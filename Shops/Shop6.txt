@@ -1,0 +1,25 @@
+//////////////////////////////////////////////////////////////////////////////////
+// Project Author : (c) Eldoro                           						//
+// Project Info	  : ####                                         		        //
+// Last Edit Date : 07 / 03 / 2015                                              //
+//////////////////////////////////////////////////////////////////////////////////
+
+// Liam The Barmaid
+
+//14 10 0 0 0 0 0 0 // Town Portal Scroll
+//14 9 0 0 0 0 0 0 // Alcohol
+//14 9 1 0 0 0 0 0 // Olive of Love
+//14 20 0 0 0 0 0 0 // Remedy of Love
+
+
+ 5 0  2 0 1 0 1 0   // Skull Staff
+ 5 1  2 0 1 0 1 0   // Angelic Staff
+ 5 2  2 0 1 0 1 0   // Serpent Staff
+ 5 3  2 0 1 0 1 0   // Thunder Staff 
+ 5 5  2 0 1 0 1 0   // Legendary Staff 
+ 
+ 5 6   2 0 1 0 1 0   // Resurrection Staff
+ 5 7   2 0 1 0 1 0   // Chaos Lightning Staff
+ 5 8   2 0 1 0 1 0   // Staff of Destruction
+ 5 9   2 0 1 0 1 0   // Dragon Soul
+end

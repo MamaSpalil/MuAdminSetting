@@ -1,0 +1,51 @@
+//==================================================================================================================
+//=================================== Quest System Configuration ==============================================
+//============================================== SunRise ===========================================================
+//============================================== 1.05.00 ===========================================================
+//==================================================================================================================
+0
+//[1] - Quest Index
+//[2] - Minimum Level
+//[3] - For Kill Quest need kill Dark Knight (0-no)
+//[4] - For Kill Quest need kill Blade Knight (0-no)
+//[5] - For Kill Quest need kill Blade Master (0-no)
+//[6] - For Kill Quest need kill Dark Wizard (0-no)
+//[7] - For Kill Quest need kill Soul Master (0-no)
+//[8] - For Kill Quest need kill Grand Master (0-no)
+//[9] - For Kill Quest need kill Fairy Elf (0-no)
+//[10] - For Kill Quest need kill Muse Elf (0-no)
+//[11] - For Kill Quest need kill High Elf (0-no)
+//[12] - For Kill Quest need kill Magic Gladiator (0-no)
+//[13] - For Kill Quest need kill Duel Master (0-no)
+//[14] - For Kill Quest need kill Dark Lord (0-no)
+//[15] - For Kill Quest need kill Lord Emperor (0-no)
+//[16] - Name of the Kill Quest
+//[17] - Information abou Kill Quest
+//[18] - Reward Zen
+//[19] - Reward Points
+//[20] - Reward Exprience
+//[21] - Reward LevelUp
+//[22] - Reward Item(Type)
+//[23] - Reward Item(Index)
+//[24] - Reward Item(Level)
+//[25] - Reward Item(Luck)
+//[26] - Reward Item(Skill)
+//[27] - Reward Item(Option)
+//[28] - Reward Item(Exellent Option)
+//[29] - Reward Item(Item Prize Drop)
+//[1]//[2]//[3]//[4]//[5]//[6]//[7]//[8]//[9]//[10]//[11]//[12]//[13]//[14]//[15]//[16]/////////////////[17]///////////////////////[18]//[19]//[20]//[21]//[22]//[23]//[24]//[25]//[26]//[27]//[28]//[29]//
+   1   10    1    0    0    0    0    0    0    0     0     0     0     0     0  "Acquaintance"   "I will Test you"                500    0    1000   1     14    13    0     0     0     0      0    2
+   2   25    0    1    1    0    0    0    0    0     0     0     0     0     0  "Kill for me"    "I create a god of murder"       500    0    1000   1     14    13    0     0     0     0      0    2
+   3   35    2    0    0    0    0    0    0    0     0     0     0     0     0  "Many Kill"      "Many Kill!"                     500    0    1000   1     14    13    0     0     0     0      0    2
+   4   40    2    0    0    0    0    0    0    0     0     0     0     0     0  "Many Kill"      "Many Kill!!"                    500    0    1000   1     14    13    0     0     0     0      0    2
+   5   50    2    0    0    0    0    0    0    0     0     0     0     0     0  "Many Kill"      "Many Kill!!!"                   500    0    1000   1     14    13    0     0     0     0      0    2
+   6   60    2    0    0    0    0    0    0    0     0     0     0     0     0  "Many Kill"      "Many Kill!!!!"                  500    0    1000   1     14    13    0     0     0     0      0    2
+   7   70    2    0    0    0    0    0    0    0     0     0     0     0     0  "Many Kill"      "Many Kill!!!!!"                 500    0    1000   1     14    13    0     0     0     0      0    2
+   8   80    2    0    0    0    0    0    0    0     0     0     0     0     0  "Many Kill"      "I have for you many quests"     500    0    1000   1     14    13    0     0     0     0      0    2
+   9   90    2    0    0    0    0    0    0    0     0     0     0     0     0  "Many Kill"      "You like to kill?"              500    0    1000   1     14    13    0     0     0     0      0    2
+  10   95    0    0    0    4    1    0    0    0     0     0     0     0     0  "Many Kill"      "I dont like Magic"              500    0    1000   1     14    13    0     0     0     0      0    2
+  11  100    2    0    0    0    0    0    0    0     0     0     0     0     0  "Many Kill"      "LevelUp for you"                500    0    1000   1     14    13    0     0     0     0      0    2
+  12  105    2    0    0    0    0    0    0    0     0     0     0     0     0  "Many Kill"      "You trust me?"                  500    0    1000   1     14    13    0     0     0     0      0    2
+  13  115    2    0    0    0    0    0    0    0     0     0     0     0     0  "Many Kill"      "Wanna kill"                     500    0    1000   1     14    13    0     0     0     0      0    2
+
+   end

@@ -1,0 +1,11 @@
+0
+//[1] Name Maximum 15 len.
+//[2] Map
+//[3] MapX
+//[4] MapY
+//TEST CUSTOMIZATION ////////
+///////[1]/////////[2]//[3]//[4]//
+0   "TEST"  2   73   177 
+1   "PARTY_#2"  2   37   53 
+2   "PARTY_#3"  2   32   86
+end   

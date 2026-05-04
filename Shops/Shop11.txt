@@ -1,0 +1,29 @@
+//////////////////////////////////////////////////////////////////////////////////
+// Project Author : (c) Eldoro                           						//
+// Project Info	  : ####                                         		        //
+// Last Edit Date : 07 / 03 / 2015                                              //
+//////////////////////////////////////////////////////////////////////////////////
+
+// Alex The Rogue Trader
+
+
+
+
+
+ 6  0 2 0 1 0 1 0 // Small Shield
+ 6  1 2 0 1 0 1 0 // Horn Shield
+ 6  2 2 0 1 0 1 0 // Kite Shield
+ 6  3 2 0 1 0 1 0 // Elven Shield
+ 6  4 2 0 1 0 1 0 // Buckler Shield
+ 6  5 2 0 1 0 1 0 // Dragon Slayer Shield
+ 6  6 2 0 1 0 1 0 // Spiked Shield
+ 6  7 2 0 1 0 1 0 // Tower Shield
+ 6  8 2 0 1 0 1 0 // Plate Shield
+ 6  9 2 0 1 0 1 0 // Large Round Shield
+ 6 10 2 0 1 0 1 0 // Serpent Shield 
+ 6 11 2 0 1 0 1 0 // Bronze Shield
+ 6 12 2 0 1 0 1 0 // Chaos Dragon Shield
+ 6 13 2 0 1 0 1 0 // Legendary Shield
+ 6 14 2 0 1 0 1 0 // Grand Soul Shield
+ 6 15 2 0 1 0 1 0 // Elemental Shield
+end

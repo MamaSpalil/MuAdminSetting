@@ -1,0 +1,21 @@
+//////////////////////////////////////////////////////////////////////////////////
+// Project Author : (c) Eldoro                           						//
+// Project Info	  : ####                                         		        //
+// Last Edit Date : 07 / 03 / 2015                                              //
+//////////////////////////////////////////////////////////////////////////////////
+
+// Eo The Craftsman
+4  0 2 0 1 0 2 0 // Short Bow
+4  1 2 0 1 0 2 0 // Bow
+4  2 2 0 1 0 2 0 // Elven Bow
+4  3 2 0 1 0 2 0 // Battle Bow
+4  8 2 0 1 0 2 0 // Crossbow
+4  9 2 0 1 0 2 0 // Golden Crossbow
+4 10 2 0 1 0 2 0 // Arquebus
+0  2 2 0 1 0 2 0 // Rapier
+1  4 2 0 1 0 2 0 // Fairy Axe
+0  0 2 0 1 0 2 0 // Short Sword
+1  4 2 0 1 0 2 0 //Elven Axe
+6  3 2 0 1 0 2 0 //Elven Axe
+3  0 2 0 1 0 2 0 //Light Spear
+end

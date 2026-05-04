@@ -1,0 +1,32 @@
+//////////////////////////////////////////////////////////////////////////////////
+// Project Author : (c) Eldoro                           						//
+// Project Info	  : ####                                         		        //
+// Last Edit Date : 07 / 03 / 2015                                              //
+//////////////////////////////////////////////////////////////////////////////////
+
+// Martin The Rogue Trader
+
+0 1  2 0 1 0 2 0  // Short Sword 
+0 2  2 0 1 0 2 0  // Rapier 
+0 3  2 0 1 0 2 0  // Katana 
+0 4  2 0 1 0 2 0  // Sword of Assassin
+0 5  2 0 1 0 2 0  // Blade Sword
+0 6  2 0 1 0 2 0  // Gladius Sword
+0 7  2 0 1 0 2 0  // Falchion Sword
+0 8  2 0 1 0 2 0  // Serpent Sword
+0 9  2 0 1 0 2 0  // Salamander Sword
+
+
+1 0  2 0 1 0 2 0  // Small Axe
+1 1  2 0 1 0 2 0  // Hand Axe
+1 2  2 0 1 0 2 0  // Double Axe
+1 3  2 0 1 0 2 0  // Tomahawk Axe
+1 4  2 0 1 0 2 0  // Elven Axe
+
+2 0  2 0 1 0 2 0  // Mace
+2 1  2 0 1 0 2 0  // Morning Star
+2 2  2 0 1 0 2 0  // Flail 
+2 3  2 0 1 0 2 0  // Great Hammer
+
+
+end

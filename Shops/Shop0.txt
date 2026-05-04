@@ -1,0 +1,34 @@
+//////////////////////////////////////////////////////////////////////////////////
+// Project Author : (c) Eldoro                           						//
+// Project Info	  : ####                                         		        //
+// Last Edit Date : 07 / 03 / 2015                                              //
+//////////////////////////////////////////////////////////////////////////////////
+// Hanzo The Blacksmith
+
+ 7 0  2 0 1 0 2 0  // Bronze Helm
+ 7 6  2 0 1 0 2 0  // Scale  Helm
+ 7 1  2 0 1 0 2 0  // Dragon Helm
+ 7 4  2 0 1 0 2 0  // Leather  Helm
+ 
+ 8 0  2 0 1 0 2 0  // Bronze Armor
+ 8 6  2 0 1 0 2 0  // Scale  Armor
+ 8 1  2 0 1 0 2 0  // Dragon Armor
+ 8 4  2 0 1 0 2 0  // Leather  Armor
+ 
+ 9 0  2 0 1 0 2 0  // Bronze Pants
+ 9 6  2 0 1 0 2 0  // Scale  Pants
+ 9 1  2 0 1 0 2 0  // Dragon Pants
+ 9 4  2 0 1 0 2 0  // Leather Pants
+ 
+10 0  2 0 1 0 2 0  // Bronze Gloves
+10 6  2 0 1 0 2 0  // Scale  Gloves
+10 1  2 0 1 0 2 0  // Dragon Gloves
+10 4  2 0 1 0 2 0  // Leather  Gloves
+
+11 0  2 0 1 0 2 0  // Bronze Boots
+11 6  2 0 1 0 2 0  // Scale  Boots
+11 1  2 0 1 0 2 0  // Dragon Boots
+11 4  2 0 1 0 2 0  // Leather  Boots
+
+
+end

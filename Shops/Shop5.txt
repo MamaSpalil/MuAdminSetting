@@ -1,0 +1,67 @@
+//////////////////////////////////////////////////////////////////////////////////
+// Project Author : (c) Eldoro                           						//
+// Project Info	  : ####                                         		        //
+// Last Edit Date : 07 / 03 / 2015                                              //
+//////////////////////////////////////////////////////////////////////////////////
+
+// Potion Girl
+13	0 0	0		0		0		0		0	//Guardian Angel
+13	1 0	0		0		0		0		0	//Imp
+13	2 0	0		0		0		0		0	//Horn of Uniria
+14	0 2	255		0		1		0		0	//Apple
+14	1 2	255		0		0		0		0	//Small Healing Potion
+14	2 2	255		0		0		0		0	//Healing Potion
+14	3 2	255		0		0		0		0	//Large Healing Potion
+14	4 2	255		0		0		0		0	//Small Mana Potion
+14	5 2	255		0		0		0		0	//Mana Potion
+14	6 2	255		0		0		0		0	//Large Mana Potion
+14  8 0 100     0       0       0       0    // Antidote
+ 4  7 0 255     0       0       0       0    // Bolts
+ 4 15 0 255     0       0       0       0    // Arrows
+14  9 0 0     0       0       0       0    // Ale
+14  9 1 0     0       0       0       0    // Olive of Love
+14 20 0 0     0       0       0       0    // Remedy of Love
+14 10 0 0     0       0       0       0    // Town portal Scroll
+14 102 0 0     0       0       0       0    // Coin 100kk
+14 103 0 0     0       0       0       0    // Coin 500kk
+14 104 0 0     0       0       0       0    // Coin 1kkk
+15  0 0 0 0 0 0 0   //Scroll of Poison
+15  1 0 0 0 0 0 0   //Scroll of Meteorite
+15  2 0 0 0 0 0 0   //Scroll of Lightning
+15  3 0 0 0 0 0 0   //Scroll of Fire Ball
+15  4 0 0 0 0 0 0   //Scroll of Flame
+15  5 0 0 0 0 0 0   //Scroll of Teleport
+15  6 0 0 0 0 0 0   //Scroll of Ice
+15  7 0 0 0 0 0 0   //Scroll of Twister
+15  8 0 0 0 0 0 0   //Scroll of Evil Spirit
+15  9 0 0 0 0 0 0   //Scroll of Hellfire
+15 10 0 0 0 0 0 0   //Scroll of Power Wave
+15 11 0 0 0 0 0 0   //Scroll of Aqua Beam
+15 12 0 0 0 0 0 0   //Scroll of Cometfall
+15 13 0 0 0 0 0 0   //Scroll of Inferno
+15 14 0 0 0 0 0 0   //Scroll of Teleport Ally
+15 15 0 0 0 0 0 0   //Scroll of Soul Barrier
+12 17 0 0 0 0 0 0   //Orb of Penetratio
+12  8 0 0 0 0 0 0   //Healing Orb
+12  9 0 0 0 0 0 0   //Orb of Greater Defense
+12 10 0 0 0 0 0 0   //Orb of Greater Damage
+12 11 0 0 0 0 0 0   //Orb of Summoning
+12 11 1 0 0 0 0 0   //Orb of Summoning +1
+12 11 2 0 0 0 0 0   //Orb of Summoning +2
+12 11 3 0 0 0 0 0   //Orb of Summoning +3
+12 11 4 0 0 0 0 0   //Orb of Summoning +4
+12 11 5 0 0 0 0 0   //Orb of Summoning +5
+12  7 0 0 0 0 0 0   //Orb of Twisting Slash
+12 13 0 0 0 0 0 0   //Orb of Impale
+12 14 0 0 0 0 0 0   //Orb of Greater Fortitude
+12 16 0 0 0 0 0 0   //Orb of Fire Slash
+
+12 21 0 0 0 0 0 0   //Scroll of FireBurst
+12 22 0 0 0 0 0 0   //Scroll of Summon
+12 23 0 0 0 0 0 0   //Scroll of Critical Damage
+12 24 0 0 0 0 0 0   //Scroll of Electric Spark
+12 35 0 0 0 0 0 0   //Scroll of Fire Skream
+12 15 0 0 0 0 0 0   //Scroll of Fire Skream
+12 15 1 0 0 0 0 0
+12 15 2 0 0 0 0 0
+end

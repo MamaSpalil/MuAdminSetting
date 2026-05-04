@@ -1,0 +1,31 @@
+//////////////////////////////////////////////////////////////////////////////////
+// Project Author : (c) Eldoro                           						//
+// Project Info	  : ####                                         		        //
+// Last Edit Date : 07 / 03 / 2015                                              //
+//////////////////////////////////////////////////////////////////////////////////
+// Lumen The Barmaid
+
+  13		18		1		0		0		0		0		0	//Cloak of Invisibility +1
+  13		18		2		0		0		0		0		0	//Cloak of Invisibility +2
+  13		18		3		0		0		0		0		0	//Cloak of Invisibility +3
+  13		18		4		0		0		0		0		0	//Cloak of Invisibility +4
+  13		18		5		0		0		0		0		0	//Cloak of Invisibility +5
+  13		18		6		0		0		0		0		0	//Cloak of Invisibility +6
+  13        29      0       0       0       0       0       0   //Armor of Guardman
+  14		19		1		0		0		0		0		0	//Devil's Invitation +1
+  14		19		2		0		0		0		0		0	//Devil's Invitation +2
+  14		19		3		0		0		0		0		0	//Devil's Invitation +3
+  14		19		4		0		0		0		0		0	//Devil's Invitation +4
+  14		19		5		0		0		0		0		0	//Devil's Invitation +5
+  13		51		1		0		0		0		0		0	//Iliusion Temple Invitation +1
+  13		51		2		0		0		0		0		0	//Iliusion Temple Invitation +2
+  13		51		3		0		0		0		0		0	//Iliusion Temple Invitation +3
+  13		51		4		0		0		0		0		0	//Iliusion Temple Invitation +4
+  13		51		5		0		0		0		0		0	//Iliusion Temple Invitation +5  
+12		31	0		0		0		0		0		0		
+12	31	1		0		0		0		0		0		
+12	31	2		0		0		0		0		0		
+14	16	0		0		0		0		0		0		
+4	7	0		0		0		0		0		0		
+4	15	0		0		0		0		0		0		
+end

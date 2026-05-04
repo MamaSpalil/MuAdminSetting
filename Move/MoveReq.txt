@@ -1,0 +1,39 @@
+//////////////////////////////////////////////////////////////////////////////////
+// Project Author : (c) Eldoro                           						//
+// Project Info	  : ####                                         		        //
+// Last Edit Date : 07 / 03 / 2015                                              //
+//////////////////////////////////////////////////////////////////////////////////
+
+//  MoveNumber	Name(Server)"	Name(Client)	Price	Lvl		Gate	ResetMin	ResetMax
+	1	"Arena"		"Arena"		2000000	200		50          0		10
+	2	"ArenaMedium"	"ArenaMedium"	2500000	200		78          5		25
+	3	"ArenaHard"	"ArenaHard"	3500000	200		79          10		100
+	4	"Lorencia"	"Lorencia"	50000	25		17          0		100
+	5	"Noria"		"Noria"		50000	25		27          0		100
+	6	"Devias"	"Devias"	75000	50		22          0		100
+	7	"DeviasCastle"	"DeviasCastle"	2000000	200		72          0		100
+	8	"Devias3"	"Devias3"	150000	60		73          0		100
+	9	"Devias4"	"Devias4"	200000	70		74          0		100
+	10	"Dungeon"	"Dungeon"	100000	60		2           0		100
+	11	"Dungeon2"	"Dungeon2"	150000	70		6           0		100
+	12	"Dungeon3"	"Dungeon3"	200000	80		10          0		100
+	13	"Atlans"	"Atlans"	150000	70		49          0		100
+	14	"Atlans2"	"Atlans2"	200000	90		75          0		100
+	15	"Atlans3"	"Atlans3"	300000	110		76          0		100
+	16	"LostTower"	"LostTower"	250000	90		42          0		100
+	17	"LostTower3"	"LostTower3"	400000	100		33          0		100
+	18	"LostTower5"	"LostTower5"	550000	110		37          0		100
+	19	"LostTower6"	"LostTower6"	650000	115		39          0		100
+	20	"LostTower7"	"LostTower7"	750000	120		41          0		100
+	21	"Tarkan"	"Tarkan"	1000000	140		57          0		100
+	22	"Tarkan2"	"Tarkan2"	1250000	150		77          0		100
+	23	"Icarus"	"Icarus"	1500000	170		63          0		100
+	24	"ValleyofLoren"	"ValleyofLoren"	100000	100		100         0		100
+	25	"Aida"		"Aida"		1500000	230		119         2		100
+	26	"Aida2"		"Aida2"		1750000	250		140         2		100
+	27	"Kanturu"	"Kanturu"	3000000	260		138         5		100
+	28	"Kanturu2"	"Kanturu2"	3500000	270		141         6		100
+	29	"Kanturu3"	"Kanturu3"	3800000	290		139         10		100
+	30	"Crywolf"	"Crywolf"	3500000	300		114         5		100
+	31	"Barracks"	"Barracks"	4000000	330		256         10		100
+	32	"Refuge"	"Refuge"	5000000	350		257	    15		100

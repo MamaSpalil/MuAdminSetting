@@ -1,0 +1,41 @@
+//==============================
+[Common]
+//==============================
+Enable			= 1	; Active 1/0
+// ------------------------------------------------------------------------
+PlusExp			= 50	; Procent
+PlusZen			= 50	; Procent
+PlusDamage		= 10	; Procent
+PlusDefence		= 10	; Procent
+PlusIgnore		= 5	; Procent
+PlusDoubleDamage	= 5	; Procent
+// ------------------------------------------------------------------------
+BuyType			= 0	; 0:NO ; 1:Zen; 2:CSPoint; 3:Credit;
+BuyCost			= 0	; Price Cost
+
+//==============================
+//	Command
+//==============================
+// #1 - /brteleport Name	; Teleport Brotherhood < Player Name >
+// #2 - /brstart Name		; Create Brotherhood Only Party Master < Brotherhood Name >
+// #3 - /brexit			; Exit Brotherhood Command
+// #4 - /brnew name		; Added New user for Brotherhood
+// ------------------------------------------------------------------------
+ExitActive		= 1	; Exit Brotherhood ; 0:No; 1:Yes;
+TeleportActive		= 1	; Teleport Brotherhood ; 0:No; 1:Yes;
+// ------------------------------------------------------------------------
+TeleportCSPoint		= 0
+TeleportTime		= 10	; Min
+// ------------------------------------------------------------------------
+
+//==============================
+//	Item Drop Manager 
+//==============================
+1
+// --------------------------------------------------------------------------------------------------------------------------------------------------------------------
+//	Item	Item	Min	Max	Item	Add	Add	Luck	Luck	Skill	Skill	Exel	Exel	Anc	Anc	Min	Max	Map	Drop
+//	Type	Index	Level	Level	Dur	Rate	Max	Rate	Option	Rate	Option	Rate	Option	Rate	Option	Level	Level	Monster	Rate
+// --------------------------------------------------------------------------------------------------------------------------------------------------------------------
+	12	15	0	0	0	0	0	0	0	0	0	0	0	0	0	0	200	-1	10000	//Jewel Of Chaos 100% Drop Test
+end
+

@@ -1,0 +1,30 @@
+//////////////////////////////////////////////////////////////////////////////////
+// Project Author : (c) Shatter							//
+// Project Info	  : Free Release 4 Ragezone MU Online Community			//
+// Last Edit Date : 30 / 12 / 2010                                              //
+//////////////////////////////////////////////////////////////////////////////////
+
+// Natasha The Fireworker
+
+13	0 0	0		0		0		0		0	//Guardian Angel
+13	1 0	0		0		0		0		0	//Imp
+13	2 0	0		0		0		0		0	//Horn of Uniria
+14	0 2	255		0		1		0		0	//Apple
+14	1 2	255		0		0		0		0	//Small Healing Potion
+14	2 2	255		0		0		0		0	//Healing Potion
+14	3 2	255		0		0		0		0	//Large Healing Potion
+14	4 2	255		0		0		0		0	//Small Mana Potion
+14	5 2	255		0		0		0		0	//Mana Potion
+14	6 2	255		0		0		0		0	//Large Mana Potion
+14  8 0 100     0       0       0       0    // Antidote
+ 4  7 0 255     0       0       0       0    // Bolts
+ 4 15 0 255     0       0       0       0    // Arrows
+14  9 0 0     0       0       0       0    // Ale
+14  9 1 0     0       0       0       0    // Olive of Love
+14 20 0 0     0       0       0       0    // Remedy of Love
+14 10 0 0     0       0       0       0    // Town portal Scroll
+14 102 0 0     0       0       0       0    // Coin 100kk
+14 103 0 0     0       0       0       0    // Coin 500kk
+14 104 0 0     0       0       0       0    // Coin 1kkk
+14 63  0 1     0       0       0       0    // Firecracker
+end
