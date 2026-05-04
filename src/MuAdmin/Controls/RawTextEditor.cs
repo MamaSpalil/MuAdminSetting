@@ -26,7 +26,7 @@ namespace MuAdmin.Controls
         public string FilePath { get { return _path; } }
         public bool IsDirty { get; private set; }
 
-        public void Load(string path, ServerProject project)
+        public new void Load(string path, ServerProject project)
         {
             _path = path;
             _bytes = File.ReadAllBytes(path);
