@@ -26,7 +26,7 @@ namespace MuAdmin.Controls
         public string FilePath { get { return _file != null ? _file.Path : null; } }
         public bool IsDirty { get; private set; }
 
-        public void Load(string path, ServerProject project)
+        public new void Load(string path, ServerProject project)
         {
             _file = TabularFileParser.Parse(path);
             BuildTable();
