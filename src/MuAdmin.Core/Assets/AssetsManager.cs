@@ -105,6 +105,54 @@ namespace MuAdmin.Core.Assets
             return null;
         }
 
+        // ---- Предметы ------------------------------------------------------
+
+        /// <summary>
+        /// Returns an icon for the item identified by <paramref name="type"/>
+        /// (section in <c>Item.txt</c>) and <paramref name="index"/>. The
+        /// manager probes <c>&lt;root&gt;/Items/&lt;type&gt;_&lt;index&gt;.{png,jpg,bmp}</c>
+        /// (matching the convention proposed in <c>IMPROVEMENTS_PROMPT.md</c>);
+        /// when no file exists a deterministic placeholder labelled
+        /// <c>"T:I"</c> is returned. The result is cached and owned by the
+        /// manager — callers must not dispose it.
+        /// </summary>
+        public Image GetItem(int type, int index)
+        {
+            string key = "item:" + type + "/" + index;
+            return GetOrAdd(key, () => LoadItemImage(type, index)
+                                       ?? PlaceholderRenderer.Render(key, type + ":" + index, 48));
+        }
+
+        /// <summary>True if a raster icon (not just a placeholder) is available for the item.</summary>
+        public bool HasItemIcon(int type, int index)
+        {
+            return FindItemIcon(type, index) != null;
+        }
+
+        /// <summary>Returns the absolute path to the item icon file, or <c>null</c>.</summary>
+        public string FindItemIcon(int type, int index)
+        {
+            if (string.IsNullOrEmpty(_serverRoot)) return null;
+            string dir = Path.Combine(_serverRoot, "Items");
+            if (!Directory.Exists(dir)) return null;
+            string stem = type.ToString() + "_" + index.ToString();
+            string[] exts = { ".png", ".jpg", ".jpeg", ".bmp" };
+            foreach (var e in exts)
+            {
+                string p = Path.Combine(dir, stem + e);
+                if (File.Exists(p)) return p;
+            }
+            return null;
+        }
+
+        private Bitmap LoadItemImage(int type, int index)
+        {
+            string p = FindItemIcon(type, index);
+            if (p == null) return null;
+            try { return LoadBitmapDetached(p); }
+            catch { return null; }
+        }
+
         // ---- Монстры -------------------------------------------------------
 
         /// <summary>

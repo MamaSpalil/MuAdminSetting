@@ -114,14 +114,22 @@ namespace MuAdmin.Controls
                     ? _project.Monsters.GetName(_selected.MonsterIndex)
                     : ("Monster " + _selected.MonsterIndex);
                 bool hasModel = _project?.Assets != null && _project.Assets.HasMonsterModel(_selected.MonsterIndex);
+                var stats = _project?.Monsters?.GetStats(_selected.MonsterIndex);
+                string statsBlock = stats != null
+                    ? string.Format(
+                        "Lvl:    {0}\nHP:     {1}\nDmg:    {2}–{3}\nDef:    {4}\n",
+                        stats.Level, stats.Hp, stats.MinDmg, stats.MaxDmg, stats.Def)
+                    : string.Empty;
                 _infoLabel.Text = string.Format(
                     "Монстр: {0}\n" +
                     "Индекс: {1}\n" +
+                    "{6}" +
                     "Зона:   ({2},{3}) – ({4},{5})\n" +
-                    "Тип:    {6}\n" +
-                    "Модель: {7}",
+                    "Тип:    {7}\n" +
+                    "Модель: {8}",
                     mname, _selected.MonsterIndex,
                     _selected.StartX, _selected.StartY, _selected.EndX, _selected.EndY,
+                    statsBlock,
                     _selected.IsPoint ? "фикс. точка" : "прямоугольник зоны",
                     hasModel ? "BMD есть" : "нет .bmd");
             }
