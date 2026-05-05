@@ -70,6 +70,7 @@
     <Compile Include="Models\QuestSystemFile.cs" />
     <Compile Include="Catalogs\MapNames.cs" />
     <Compile Include="Catalogs\ItemCatalog.cs" />
+    <Compile Include="Catalogs\ItemLevelNames.cs" />
     <Compile Include="Catalogs\MonsterCatalog.cs" />
     <Compile Include="Catalogs\MonsterSetBaseLayout.cs" />
     <Compile Include="ServerProject.cs" />

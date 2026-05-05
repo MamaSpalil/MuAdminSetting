@@ -13,7 +13,18 @@ namespace MuAdmin.Core.Catalogs
     /// </summary>
     public sealed class ItemCatalog
     {
+        /// <summary>Single item row exposed by <see cref="Entries"/>.</summary>
+        public sealed class Entry
+        {
+            public int Type;
+            public int Index;
+            public string Name;
+            /// <summary>Base item level read from the row (column "ItemLvl" / "Level"). Zero when unknown.</summary>
+            public int ItemLvl;
+        }
+
         private readonly Dictionary<long, string> _byKey = new Dictionary<long, string>();
+        private readonly List<Entry> _entries = new List<Entry>();
 
         public string GetName(int type, int index)
         {
@@ -29,6 +40,13 @@ namespace MuAdmin.Core.Catalogs
         }
 
         public IEnumerable<KeyValuePair<long, string>> All { get { return _byKey; } }
+
+        /// <summary>
+        /// All known items as ordered entries (insertion order from
+        /// <c>Item.txt</c>). Useful for building UI pickers that need both
+        /// the numeric type/index and the human-readable name.
+        /// </summary>
+        public IReadOnlyList<Entry> Entries { get { return _entries; } }
 
         public static long Key(int type, int index) { return ((long)type << 32) | (uint)index; }
 
@@ -58,7 +76,24 @@ namespace MuAdmin.Core.Catalogs
                 // Column 8 (0-based) is ItemName according to the Item.txt
                 // header in this repository.
                 string raw = l.Cells[8];
-                cat._byKey[Key(currentType, idx)] = Unquote(raw);
+                string name = Unquote(raw);
+                cat._byKey[Key(currentType, idx)] = name;
+
+                // Column 9 (0-based) is "ItemLvl" for normal item sections,
+                // or "Value" for the Misc sections (where the actual base
+                // level is in column 10). We try both as a best-effort hint
+                // for UI level pickers; quest editors do not depend on it.
+                int lvl = 0;
+                if (l.Cells.Count > 9) int.TryParse(l.Cells[9], out lvl);
+                if (lvl == 0 && l.Cells.Count > 10) int.TryParse(l.Cells[10], out lvl);
+
+                cat._entries.Add(new Entry
+                {
+                    Type = currentType,
+                    Index = idx,
+                    Name = name,
+                    ItemLvl = lvl
+                });
             }
             return cat;
         }
