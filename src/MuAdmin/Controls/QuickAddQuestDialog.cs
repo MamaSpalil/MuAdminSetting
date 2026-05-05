@@ -69,6 +69,137 @@ namespace MuAdmin.Controls
             RefreshItemLevels();
             RegenerateMessages();
             RefreshPreview();
+
+            // The dialog serves both quick-add and quick-edit scenarios; the
+            // shared title reflects that. Individual modes refine the OK
+            // button label via SetEditMode.
+            this.Text = "Быстрое редактирование/Добавление квеста";
+        }
+
+        /// <summary>
+        /// Switches the dialog between "add" (default) and "edit" presentation.
+        /// In edit mode the OK button is labelled <c>Save Quest</c>; in add mode
+        /// it is labelled <c>Добавить</c>.
+        /// </summary>
+        public void SetEditMode(bool editing)
+        {
+            _btnOk.Text = editing ? "Save Quest" : "Добавить";
+        }
+
+        /// <summary>
+        /// Populates the dialog's controls from an existing 17-cell quest row
+        /// so the user can edit it. Cells are interpreted using
+        /// <see cref="QuestRowSchema"/>; out-of-range numeric values are
+        /// clamped to the corresponding control's allowed range.
+        /// </summary>
+        public void LoadFromCells(IList<string> cells)
+        {
+            if (cells == null) return;
+
+            _suppress = true;
+            try
+            {
+                SelectComboById(_cbLocation, ParseInt(GetCell(cells, QuestRowSchema.Location)));
+                SelectMonsterCombo(ParseInt(GetCell(cells, QuestRowSchema.Monster)));
+
+                SetNumeric(_numCount, ParseInt(GetCell(cells, QuestRowSchema.MonsterCount)));
+                int percent = ParseInt(GetCell(cells, QuestRowSchema.Percent));
+                SetNumeric(_numPercent, percent);
+                _chkAutoPercent.Checked = percent == 100;
+                _numPercent.Enabled = !_chkAutoPercent.Checked;
+
+                int prizeType = ParseInt(GetCell(cells, QuestRowSchema.PrizeType));
+                if (prizeType < 0 || prizeType >= _cbPrizeType.Items.Count) prizeType = 0;
+                _cbPrizeType.SelectedIndex = prizeType;
+                SetNumeric(_numPrizeValue, ParseInt(GetCell(cells, QuestRowSchema.PrizeValue)));
+
+                _txtMessage1.Text = Unquote(GetCell(cells, QuestRowSchema.Message1));
+                _txtMessage2.Text = Unquote(GetCell(cells, QuestRowSchema.Message2));
+
+                SetNumeric(_numDropCnt, ParseInt(GetCell(cells, QuestRowSchema.DropItemCount)));
+
+                // Item group: select the matching item entry, then lvl/skill/etc.
+                int itemType = ParseInt(GetCell(cells, QuestRowSchema.ItemType));
+                int itemIndex = ParseInt(GetCell(cells, QuestRowSchema.ItemIndex));
+                SelectItemCombo(itemType, itemIndex);
+
+                SetNumeric(_numLvlMin, ParseInt(GetCell(cells, QuestRowSchema.LvlMin)));
+                SetNumeric(_numLvlMax, ParseInt(GetCell(cells, QuestRowSchema.LvlMax)));
+                SetNumeric(_numSkill,  ParseInt(GetCell(cells, QuestRowSchema.Skill)));
+                SetNumeric(_numLuck,   ParseInt(GetCell(cells, QuestRowSchema.Luck)));
+                SetNumeric(_numOpt,    ParseInt(GetCell(cells, QuestRowSchema.Opt)));
+                SetNumeric(_numExc,    ParseInt(GetCell(cells, QuestRowSchema.Exc)));
+            }
+            finally { _suppress = false; }
+
+            UpdateItemGroupVisibility();
+            // Rebuild the level dropdown for the loaded item & sync the
+            // selected level to the loaded LvlMin value.
+            RefreshItemLevels();
+            RefreshPreview();
+        }
+
+        private static string GetCell(IList<string> cells, int index)
+        {
+            return index >= 0 && index < cells.Count ? (cells[index] ?? string.Empty) : string.Empty;
+        }
+
+        private static int ParseInt(string s)
+        {
+            if (string.IsNullOrEmpty(s)) return 0;
+            int v;
+            return int.TryParse(s.Trim(), out v) ? v : 0;
+        }
+
+        private static void SetNumeric(NumericUpDown nud, int value)
+        {
+            if (value < nud.Minimum) value = (int)nud.Minimum;
+            if (value > nud.Maximum) value = (int)nud.Maximum;
+            nud.Value = value;
+        }
+
+        private static void SelectComboById(ComboBox cb, int id)
+        {
+            for (int i = 0; i < cb.Items.Count; i++)
+            {
+                var ci = cb.Items[i] as ComboItem;
+                if (ci != null && ci.Id == id) { cb.SelectedIndex = i; return; }
+            }
+        }
+
+        private void SelectMonsterCombo(int id)
+        {
+            for (int i = 0; i < _cbMonster.Items.Count; i++)
+            {
+                var ci = _cbMonster.Items[i] as ComboItem;
+                if (ci != null && ci.Id == id) { _cbMonster.SelectedIndex = i; return; }
+            }
+            // Unknown monster id — fall back to free-form text so the user can
+            // see what was loaded and either keep it or pick a known monster.
+            _cbMonster.SelectedIndex = -1;
+            _cbMonster.Text = id.ToString();
+        }
+
+        private void SelectItemCombo(int type, int index)
+        {
+            for (int i = 0; i < _cbItem.Items.Count; i++)
+            {
+                var ic = _cbItem.Items[i] as ItemComboItem;
+                if (ic != null && ic.Type == type && ic.Index == index)
+                {
+                    _cbItem.SelectedIndex = i;
+                    return;
+                }
+            }
+            if (_cbItem.Items.Count > 0) _cbItem.SelectedIndex = 0;
+        }
+
+        private static string Unquote(string s)
+        {
+            if (string.IsNullOrEmpty(s)) return string.Empty;
+            if (s.Length >= 2 && s[0] == '"' && s[s.Length - 1] == '"')
+                return s.Substring(1, s.Length - 2);
+            return s;
         }
 
         // ---------- public results ----------

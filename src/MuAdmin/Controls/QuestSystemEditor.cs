@@ -445,6 +445,47 @@ namespace MuAdmin.Controls
             e.ThrowException = false;
         }
 
+        // Double-clicking an existing quest row opens the quick-edit dialog
+        // pre-populated with the row's current cells. Saving the dialog
+        // overwrites the source line in place and refreshes the grid so the
+        // resolved Location/Monster/Item names update immediately.
+        private void OnQuestCellDoubleClick(object sender, DataGridViewCellEventArgs e)
+        {
+            if (_file == null || _project == null) return;
+            if (e.RowIndex < 0 || e.RowIndex >= _rowToLine.Count) return;
+
+            int li = _rowToLine[e.RowIndex];
+            var line = _file.Lines[li];
+            if (line.Kind != QuestSystemLineKind.Quest) return;
+
+            using (var dlg = new QuickAddQuestDialog(_project))
+            {
+                dlg.SetEditMode(true);
+                dlg.LoadFromCells(line.Cells);
+
+                if (dlg.ShowDialog(this.FindForm() ?? (Control)this) != DialogResult.OK)
+                    return;
+
+                line.Cells = dlg.BuildQuestCells();
+                line.Modified = true;
+
+                // Rebuild the bottom grid so the edited cells (and their
+                // resolved Location/Monster/Item names) are reflected
+                // immediately. Re-select the row the user was editing.
+                BuildQuestTable();
+                IsDirty = true;
+                UpdateStatus();
+
+                int newGridRow = _rowToLine != null ? _rowToLine.IndexOf(li) : -1;
+                if (newGridRow >= 0 && newGridRow < _grid.Rows.Count)
+                {
+                    _grid.ClearSelection();
+                    _grid.Rows[newGridRow].Selected = true;
+                    _grid.FirstDisplayedScrollingRowIndex = newGridRow;
+                }
+            }
+        }
+
         private void UpdateStatus()
         {
             _statusLabel.Text = (_file == null ? string.Empty : Path.GetFileName(_file.Path))

@@ -54,6 +54,7 @@ namespace MuAdmin.Controls
             this._grid.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.AllCells;
             this._grid.RowHeadersVisible = false;
             this._grid.CellValueChanged += new System.Windows.Forms.DataGridViewCellEventHandler(this.OnQuestCellChanged);
+            this._grid.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.OnQuestCellDoubleClick);
             this._grid.DataError += new System.Windows.Forms.DataGridViewDataErrorEventHandler(this.OnGridDataError);
 
             this._statusLabel.Name = "_statusLabel";
