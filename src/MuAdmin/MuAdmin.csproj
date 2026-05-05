@@ -99,6 +99,9 @@
     <Compile Include="Controls\RawTextEditor.Designer.cs">
       <DependentUpon>RawTextEditor.cs</DependentUpon>
     </Compile>
+    <Compile Include="Controls\MonsterSpawnPreviewPanel.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="MainForm.resx">
       <DependentUpon>MainForm.cs</DependentUpon>
