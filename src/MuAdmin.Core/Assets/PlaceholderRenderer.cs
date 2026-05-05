@@ -36,12 +36,30 @@ namespace MuAdmin.Core.Assets
 
                 if (!string.IsNullOrEmpty(label))
                 {
-                    float fontSize = System.Math.Max(7f, size / 5f);
+                    // Авто-уменьшение шрифта для длинных подписей: исходим
+                    // из того, что должно поместиться по ширине самой
+                    // длинной строки; многострочные подписи разрешены
+                    // (см. перенос в "Имя монстра\n#NN").
+                    int lineCount = 1;
+                    int longest = 0, cur = 0;
+                    for (int i = 0; i < label.Length; i++)
+                    {
+                        if (label[i] == '\n') { if (cur > longest) longest = cur; cur = 0; lineCount++; }
+                        else cur++;
+                    }
+                    if (cur > longest) longest = cur;
+                    if (longest < 1) longest = 1;
+
+                    float baseSize = System.Math.Max(7f, size / 5f);
+                    float byWidth = (size * 1.6f) / longest;
+                    float byHeight = (size * 0.85f) / lineCount;
+                    float fontSize = System.Math.Max(7f, System.Math.Min(baseSize, System.Math.Min(byWidth, byHeight)));
+
                     using (var font = new Font(FontFamily.GenericSansSerif, fontSize, FontStyle.Bold, GraphicsUnit.Pixel))
-                    using (var fmt = new StringFormat { Alignment = StringAlignment.Center, LineAlignment = StringAlignment.Center })
+                    using (var fmt = new StringFormat { Alignment = StringAlignment.Center, LineAlignment = StringAlignment.Center, Trimming = StringTrimming.EllipsisCharacter })
                     using (var fg = new SolidBrush(Darker(back, 0.6f)))
                     {
-                        g.DrawString(label, font, fg, new RectangleF(0, 0, size, size), fmt);
+                        g.DrawString(label, font, fg, new RectangleF(2, 2, size - 4, size - 4), fmt);
                     }
                 }
             }

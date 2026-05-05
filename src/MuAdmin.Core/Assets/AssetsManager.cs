@@ -68,41 +68,92 @@ namespace MuAdmin.Core.Assets
         {
             string name = MapNames.Get(mapNumber);
             string key = "map:" + mapNumber;
-            return GetOrAdd(key, () => LoadMapImage(name) ?? PlaceholderRenderer.Render(key, name, 256));
+            return GetOrAdd(key, () => LoadMapImageByNumber(mapNumber, name)
+                                       ?? PlaceholderRenderer.Render(key, name, 256));
         }
 
         /// <summary>Возвращает абсолютный путь к JPG/PNG карты, если он существует.</summary>
         public string FindMapFile(int mapNumber)
         {
             if (string.IsNullOrEmpty(_serverRoot)) return null;
-            string name = MapNames.Get(mapNumber);
             string dir = Path.Combine(_serverRoot, "Maps");
             if (!Directory.Exists(dir)) return null;
             string[] exts = { ".jpg", ".jpeg", ".png", ".bmp" };
-            foreach (var ext in exts)
-            {
-                string p = Path.Combine(dir, name + ext);
-                if (File.Exists(p)) return p;
-            }
+            foreach (var stem in MapFileStems(mapNumber))
+                foreach (var ext in exts)
+                {
+                    string p = Path.Combine(dir, stem + ext);
+                    if (File.Exists(p)) return p;
+                }
             return null;
         }
 
-        private Bitmap LoadMapImage(string name)
+        private Bitmap LoadMapImageByNumber(int mapNumber, string canonicalName)
         {
-            if (string.IsNullOrEmpty(_serverRoot) || string.IsNullOrEmpty(name)) return null;
+            if (string.IsNullOrEmpty(_serverRoot)) return null;
             string dir = Path.Combine(_serverRoot, "Maps");
             if (!Directory.Exists(dir)) return null;
             string[] exts = { ".jpg", ".jpeg", ".png", ".bmp" };
-            foreach (var ext in exts)
-            {
-                string p = Path.Combine(dir, name + ext);
-                if (File.Exists(p))
+            foreach (var stem in MapFileStems(mapNumber, canonicalName))
+                foreach (var ext in exts)
                 {
-                    try { return LoadBitmapDetached(p); }
-                    catch { return null; }
+                    string p = Path.Combine(dir, stem + ext);
+                    if (File.Exists(p))
+                    {
+                        try { return LoadBitmapDetached(p); }
+                        catch { return null; }
+                    }
                 }
-            }
             return null;
+        }
+
+        /// <summary>
+        /// Перечисляет вероятные имена файла-картинки карты:
+        /// сначала каноническое имя из <see cref="MapNames"/>, затем
+        /// исторические альтернативные написания, встречающиеся в реальной
+        /// поставке ассетов (см. файлы в папке <c>Maps/</c>).
+        /// </summary>
+        private static IEnumerable<string> MapFileStems(int mapNumber)
+        {
+            return MapFileStems(mapNumber, MapNames.Get(mapNumber));
+        }
+
+        private static IEnumerable<string> MapFileStems(int mapNumber, string canonicalName)
+        {
+            if (!string.IsNullOrEmpty(canonicalName))
+                yield return canonicalName;
+            foreach (var alias in MapFileAliases(mapNumber))
+                yield return alias;
+        }
+
+        // Карта <map id> → альтернативные имена файлов в Maps/.
+        // Реальная поставка ассетов из MU-клиента использует упрощённые/
+        // ошибочные транскрипции (Kantru вместо Kanturu, Crywolf вместо
+        // CryWolf1, Vulcano вместо VulcanusPvP и т.п.); чтобы такие
+        // картинки автоматически подхватывались, мы пробуем эти имена
+        // в дополнение к каноническим.
+        private static readonly Dictionary<int, string[]> _mapAliases = new Dictionary<int, string[]>
+        {
+            { 4,  new[] { "Losttower", "LostTower" } },
+            { 31, new[] { "LandsOfTrials" } },
+            { 33, new[] { "Aida2" } },
+            { 34, new[] { "Crywolf" } },
+            { 35, new[] { "Crywolf" } },
+            { 37, new[] { "Kantru", "Kanturu" } },
+            { 38, new[] { "Kantru", "Kanturu" } },
+            { 39, new[] { "Kantru3", "Kanturu3" } },
+            { 41, new[] { "BarracksOfBalgass" } },
+            { 51, new[] { "Elbeland" } },
+            { 56, new[] { "SwampofCalm", "SwampOfCalm" } },
+            { 63, new[] { "Vulcano", "Vulcanus" } }
+        };
+
+        private static IEnumerable<string> MapFileAliases(int mapNumber)
+        {
+            string[] aliases;
+            if (_mapAliases.TryGetValue(mapNumber, out aliases))
+                return aliases;
+            return System.Array.Empty<string>();
         }
 
         // ---- Предметы ------------------------------------------------------
@@ -164,9 +215,24 @@ namespace MuAdmin.Core.Assets
         /// </summary>
         public Image GetMonster(int monsterIndex)
         {
-            string key = "monster:" + monsterIndex;
+            return GetMonster(monsterIndex, null);
+        }
+
+        /// <summary>
+        /// То же, что и <see cref="GetMonster(int)"/>, но при отсутствии
+        /// растрового файла плейсхолдер подписывается именем монстра
+        /// (если оно передано), а не лаконичным <c>"M:N"</c>. Удобно для
+        /// крупных превью в редакторе спотов.
+        /// </summary>
+        public Image GetMonster(int monsterIndex, string monsterName)
+        {
+            string label = string.IsNullOrEmpty(monsterName)
+                ? "M:" + monsterIndex
+                : monsterName + "\n#" + monsterIndex;
+            string key = "monster:" + monsterIndex
+                + (string.IsNullOrEmpty(monsterName) ? string.Empty : "@" + monsterName);
             return GetOrAdd(key, () => LoadMonsterImage(monsterIndex)
-                                       ?? PlaceholderRenderer.Render(key, "M:" + monsterIndex, 64));
+                                       ?? PlaceholderRenderer.Render(key, label, 64));
         }
 
         /// <summary>True, если для индекса есть BMD-модель в <c>Monster/</c>.</summary>

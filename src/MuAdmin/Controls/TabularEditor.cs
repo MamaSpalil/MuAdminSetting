@@ -153,6 +153,12 @@ namespace MuAdmin.Controls
                     _table.Rows.Add(row);
                 }
                 _grid.DataSource = _table;
+                // Запрещаем сортировку — индекс строки в гриде должен
+                // совпадать с индексом в file.Lines (см. CommitTable),
+                // иначе сохранение запишет ячейки не в свою строку и
+                // повредит файл (особенно заметно на спотах).
+                foreach (DataGridViewColumn col in _grid.Columns)
+                    col.SortMode = DataGridViewColumnSortMode.NotSortable;
                 int idColIdx = iconOffset;
                 int commentColIdx = iconOffset + 1;
                 if (_grid.Columns.Count > idColIdx) _grid.Columns[idColIdx].ReadOnly = true;

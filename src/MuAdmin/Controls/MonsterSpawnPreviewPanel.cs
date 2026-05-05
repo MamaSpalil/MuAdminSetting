@@ -55,8 +55,8 @@ namespace MuAdmin.Controls
             _monsterIcon = new PictureBox
             {
                 Dock = DockStyle.Top,
-                Height = 64,
-                SizeMode = PictureBoxSizeMode.CenterImage,
+                Height = 96,
+                SizeMode = PictureBoxSizeMode.Zoom,
                 BackColor = Color.FromArgb(250, 250, 250)
             };
 
@@ -108,11 +108,11 @@ namespace MuAdmin.Controls
             {
                 _captionLabel.Text = "Карта: " + MapNames.Get(_selected.MapNumber)
                                                 + "  (#" + _selected.MapNumber + ")";
-                if (_project?.Assets != null)
-                    _monsterIcon.Image = _project.Assets.GetMonster(_selected.MonsterIndex);
                 string mname = _project?.Monsters != null
                     ? _project.Monsters.GetName(_selected.MonsterIndex)
                     : ("Monster " + _selected.MonsterIndex);
+                if (_project?.Assets != null)
+                    _monsterIcon.Image = _project.Assets.GetMonster(_selected.MonsterIndex, mname);
                 bool hasModel = _project?.Assets != null && _project.Assets.HasMonsterModel(_selected.MonsterIndex);
                 var stats = _project?.Monsters?.GetStats(_selected.MonsterIndex);
                 string statsBlock = stats != null

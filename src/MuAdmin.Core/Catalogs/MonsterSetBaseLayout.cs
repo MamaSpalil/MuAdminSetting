@@ -13,12 +13,20 @@ namespace MuAdmin.Core.Catalogs
     ///
     /// Формат сектора (см. <c>Monsters/MonsterSetBase.txt</c>):
     /// <code>
-    ///   3                                 // ← заголовок: номер карты
-    ///   43  3  30  10  10  240  240 -1 3 // ← спавн (9 столбцов)
-    ///   200 6  6   63  160 1             // ← фикс. NPC (6 столбцов)
+    ///   3                                 // ← заголовок секции (НЕ номер карты!)
+    ///   43  3  30  10  10  240  240 -1 3 // ← спавн (9 столбцов): MonsterIdx, Map, Dist, sx,sy,ex,ey, Element, Count
+    ///   200 6  6   63  160 1             // ← фикс. NPC (6 столбцов): MonsterIdx, Map, Dist, X, Y, Count
     ///   end                              // ← терминатор
     /// </code>
-    /// Координаты MU — целые в диапазоне <c>0..255</c> по обеим осям.
+    /// Кроме того, поддерживается формат <c>KanturuMonsterSetBase.txt</c>
+    /// (7 колонок с ведущим порядковым номером):
+    /// <code>
+    ///   0  364  39  0  188  110  -1      // ← Seq, MonsterIdx, Map, Dist, X, Y, Count
+    /// </code>
+    /// Номер карты всегда читается из строки спавна — заголовок секции
+    /// (одна целочисленная ячейка) — это просто идентификатор группы и
+    /// игнорируется. Координаты MU — целые в диапазоне <c>0..255</c>
+    /// по обеим осям.
     /// </summary>
     public sealed class MonsterSetBaseLayout
     {
@@ -49,32 +57,19 @@ namespace MuAdmin.Core.Catalogs
             var layout = new MonsterSetBaseLayout();
             if (file == null) return layout;
 
-            int currentMap = -1;
             for (int i = 0; i < file.Lines.Count; i++)
             {
                 var l = file.Lines[i];
-                if (l.Kind == LineKind.BlockMarker)
-                {
-                    // "end" — закрытие сектора, следующий заголовок
-                    // вновь установит currentMap.
-                    currentMap = -1;
-                    continue;
-                }
                 if (l.Kind != LineKind.Data) continue;
 
-                // Заголовок сектора: ровно одна ячейка-целое.
-                if (l.Cells.Count == 1)
-                {
-                    int m;
-                    if (int.TryParse(l.Cells[0], out m))
-                    {
-                        currentMap = m;
-                        continue;
-                    }
-                }
+                // Заголовок секции: ровно одна целочисленная ячейка.
+                // Раньше мы интерпретировали её как номер карты, но в реальном
+                // формате MU это просто id группы (Golden Invasion, Arena, ...) —
+                // номер карты всегда берётся из самой строки спавна.
+                if (l.Cells.Count == 1 && int.TryParse(l.Cells[0], out _))
+                    continue;
 
-                if (currentMap < 0) continue; // данные вне сектора — пропускаем
-                var s = TryParseSpawn(l, i, currentMap);
+                var s = TryParseSpawn(l, i);
                 if (s == null) continue;
                 layout.Spawns.Add(s);
                 layout.ByLineIndex[i] = s;
@@ -82,44 +77,72 @@ namespace MuAdmin.Core.Catalogs
             return layout;
         }
 
-        private static Spawn TryParseSpawn(TabularLine line, int lineIndex, int mapNumber)
+        private static Spawn TryParseSpawn(TabularLine line, int lineIndex)
         {
-            if (line.Cells.Count < 5) return null;
-            int idx;
-            if (!int.TryParse(line.Cells[0], out idx)) return null;
+            int n = line.Cells.Count;
+            if (n < 6) return null;
 
-            // Стандартный 9-столбцовый формат: Index, _, _, sx, sy, ex, ey, element, count.
-            if (line.Cells.Count >= 7
+            // Стандартный 9-столбцовый формат (зоны спавна):
+            // MonsterIdx, Map, Dist, sx, sy, ex, ey, Element, Count.
+            if (n >= 9
+                && int.TryParse(line.Cells[0], out int idx9)
+                && int.TryParse(line.Cells[1], out int map9)
                 && int.TryParse(line.Cells[3], out int sx)
                 && int.TryParse(line.Cells[4], out int sy)
                 && int.TryParse(line.Cells[5], out int ex)
-                && int.TryParse(line.Cells[6], out int ey))
+                && int.TryParse(line.Cells[6], out int ey)
+                && InCoordRange(sx) && InCoordRange(sy)
+                && InCoordRange(ex) && InCoordRange(ey))
             {
                 return new Spawn
                 {
                     LineIndex = lineIndex,
-                    MapNumber = mapNumber,
-                    MonsterIndex = idx,
+                    MapNumber = map9,
+                    MonsterIndex = idx9,
                     StartX = sx, StartY = sy, EndX = ex, EndY = ey,
                     IsPoint = false
                 };
             }
 
-            // 6-столбцовый формат фикс. NPC: Index, _, _, x, y, count.
-            if (line.Cells.Count >= 5
-                && int.TryParse(line.Cells[3], out int px)
-                && int.TryParse(line.Cells[4], out int py))
+            // 7-столбцовый Kanturu-формат с ведущим порядковым номером:
+            // Seq, MonsterIdx, Map, Dist, X, Y, Count.
+            if (n == 7
+                && int.TryParse(line.Cells[1], out int idxK)
+                && int.TryParse(line.Cells[2], out int mapK)
+                && int.TryParse(line.Cells[4], out int kx)
+                && int.TryParse(line.Cells[5], out int ky)
+                && InCoordRange(kx) && InCoordRange(ky))
             {
                 return new Spawn
                 {
                     LineIndex = lineIndex,
-                    MapNumber = mapNumber,
-                    MonsterIndex = idx,
+                    MapNumber = mapK,
+                    MonsterIndex = idxK,
+                    StartX = kx, StartY = ky, EndX = kx, EndY = ky,
+                    IsPoint = true
+                };
+            }
+
+            // 6-столбцовый формат фикс. NPC: MonsterIdx, Map, Dist, X, Y, Count.
+            if (n >= 6
+                && int.TryParse(line.Cells[0], out int idx6)
+                && int.TryParse(line.Cells[1], out int map6)
+                && int.TryParse(line.Cells[3], out int px)
+                && int.TryParse(line.Cells[4], out int py)
+                && InCoordRange(px) && InCoordRange(py))
+            {
+                return new Spawn
+                {
+                    LineIndex = lineIndex,
+                    MapNumber = map6,
+                    MonsterIndex = idx6,
                     StartX = px, StartY = py, EndX = px, EndY = py,
                     IsPoint = true
                 };
             }
             return null;
         }
+
+        private static bool InCoordRange(int v) { return v >= 0 && v <= 255; }
     }
 }
