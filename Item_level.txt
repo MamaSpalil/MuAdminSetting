@@ -1,0 +1,328 @@
+//ItemType //ItemIndex //ItemLevel
+14	0	0	Apple
+14	1	0	Small Healing Potion
+14	2	0	Medium Healing Potion
+14	3	0	Large Healing Potion
+14	4	0	Small Mana Potion
+14	5	0	Medium Mana Potion
+14	6	0	Large Mana Potion
+14	7	0	Potion Of Bles
+14	7	1	Potion Of Soul
+14	8	0	Antidote
+14	9	0	Ale
+14	9	1	Olive of love
+14	10	0	Town Scroll Portal
+14	11	0	Box of Luck
+14	11	1	Star of Sacred Birth
+14	11	2	Firecracker
+14	11	3	Heart of Love
+14	11	5	Silver Medal
+14	11	6	Gold Medal
+14	11	7	Bok of Heaven
+14	11	8	Bok of Kundun+1
+14	11	9	Bok of Kundun+2
+14	11	10	Bok of Kundun+3
+14	11	11	Bok of Kundun+4
+14	11	12	Bok of Kundun+5
+14	11	13	Heart of Dark Lord
+14	11	14	Blue Luck Pouch
+14	11	15	Red Luck Pouch
+14	12	0	Sing Of Zen
+14	12	1	Heart
+14	12	2	Pergamin
+14	13	0	Jewel of Bless
+14	14	0	Jewel of Soul
+14	15	0	Zen
+14	16	0	Jewel of Life
+14	17	0	Devil Eye
+14	17	1	Devil Eye +1
+14	17	2	Devil Eye +2
+14	17	3	Devil Eye +3
+14	17	4	Devil Eye +4
+14	17	5	Devil Eye +5
+14	17	6	Devil Eye +6
+14	17	7	Devil Eye +7
+14	18	0	Devil Key
+14	18	1	Devil Key +1
+14	18	2	Devil Key +2
+14	18	3	Devil Key +3
+14	18	4	Devil Key +4
+14	18	5	Devil Key +5
+14	18	6	Devil Key +6
+14	18	7	Devil Key +7
+14	19	0	Devil Invitation
+14	19	1	Devil Invitation +1
+14	19	2	Devil Invitation +2
+14	19	3	Devil Invitation +3
+14	19	4	Devil Invitation +4
+14	19	5	Devil Invitation +5
+14	19	6	Devil Invitation +6
+14	19	7	Devil Invitation +7
+14	20	0	Remedy of Love
+14	21	0	Rena
+14	21	1	Stone
+14	21	3	Sing Of Lord
+14	22	0	Jewel of Creation
+14	23	0	Scroll of Emperor
+14	23	1	Ring Of Honor
+14	24	0	Broken Sword
+14	24	1	Dark Stone
+14	25	0	Tear of Elf
+14	26	0	Soul Shard of Wizard
+14	27	0	Ancient Metal
+14	28	0	Lost Map
+14	28	1	Lost Map +1
+14	28	2	Lost Map +2
+14	28	3	Lost Map +3
+14	28	4	Lost Map +4
+14	28	5	Lost Map +5
+14	28	6	Lost Map +6
+14	28	7	Lost Map +7
+14	29	0	Symbol of Kundun
+14	29	1	Symbol of Kundun +1
+14	29	2	Symbol of Kundun +2
+14	29	3	Symbol of Kundun +3
+14	29	4	Symbol of Kundun +4
+14	29	5	Symbol of Kundun +5
+14	29	6	Symbol of Kundun +6
+14	29	7	Symbol of Kundun +7
+14	30	0	__징표
+14	31	0	Jewel of Guardian
+14	32	0	Pink Chocolate Box
+14	32	1	Lilac Chocolate Box
+14	33	0	Red Chocolate Box
+14	33	1	Orange Chocolate Box
+14	34	0	Blue Chocolate Box
+14	34	1	Navy Chocolate Box
+14	35	0	Small SD Potion
+14	36	0	Medium SD Potion
+14	37	0	Large SD Potion
+14	38	0	Small AG Potion
+14	39	0	Medium AG Potion
+14	40	0	Large AG Potion
+14	41	0	Gemstone
+14	42	0	Jewel of Harmony
+14	43	0	Lower Refining Stone
+14	44	0	Higher Refining Stone
+14	45	0	Halloween PumpKin
+14	46	0	Hallwoeen Event Scroll +1
+14	47	0	Halloween Event Scroll +2
+14	48	0	Halloween Event Scroll +3
+14	49	0	Halloween Event Strange Item
+14	50	0	Haloween Event Pumpkin
+14	51	0	Sky Event Ticket
+14	51	1	Sky Event Ticket +1
+14	51	2	Sky Event Ticket +2
+14	51	3	Sky Event Ticket +3
+14	51	4	Sky Event Ticket +4
+14	51	5	Sky Event Ticket +5
+14	51	6	Sky Event Ticket +6
+14	51	7	Sky Event Ticket +7
+14	51	8	Sky Event Ticket +8
+14	51	9	Sky Event Ticket +9
+13	0	0	Guardian Angel
+13	1	0	Imp
+13	2	0	Horn of Uniria
+13	3	0	Dinorant
+13	4	0	Dark Horse
+13	5	0	Dark Raven
+13	7	0	Archer
+13	7	1	Sperman
+13	8	0	Ring of Ice
+13	9	0	Ring of Poison
+13	10	0	Ring of Transform in Dragonin
+13	10	1	Ring of Transform in Gigant
+13	10	2	Ring of Transform in Skeleton
+13	10	3	Ring of Transform in Bull
+13	10	4	Ring of Transform in Linch
+13	10	5	Ring of Transform in Death Cow
+13	11	0	Scroll of guardian
+13	11	1	Life Stone
+13	12	0	Pendant of Lighting
+13	13	0	Pendant of Fire
+13	14	0	Lochs Feather
+13	14	1	Crest Of Monarch
+13	15	0	Energy Fruit
+13	15	1	Stamina Fruit
+13	15	2	Agility Fruit
+13	15	3	Strangth Fruit
+13	15	4	Command Fruit
+13	16	0	Scroll of Archangel
+13	16	1	Scroll of Archangel +1
+13	16	2	Scroll of Archangel +2
+13	16	3	Scroll of Archangel +3
+13	16	4	Scroll of Archangel +4
+13	16	5	Scroll of Archangel +5
+13	16	6	Scroll of Archangel +6
+13	16	7	Scroll of Archangel +7
+13	16	8	Scroll of Archangel +8
+13	16	9	Scroll of Archangel +9
+13	17	0	Blood Bone
+13	17	1	Blood Bone +1
+13	17	2	Blood Bone +2
+13	17	3	Blood Bone +3
+13	17	4	Blood Bone +4
+13	17	5	Blood Bone +5
+13	17	6	Blood Bone +6
+13	17	7	Blood Bone +7
+13	17	8	Blood Bone +8
+13	17	9	Blood Bone +9
+13	18	0	Invisibility Cloak
+13	18	1	Invisibility Cloak +1
+13	18	2	Invisibility Cloak +2
+13	18	3	Invisibility Cloak +3
+13	18	4	Invisibility Cloak +4
+13	18	5	Invisibility Cloak +5
+13	18	6	Invisibility Cloak +6
+13	18	7	Invisibility Cloak +7
+13	18	8	Invisibility Cloak +8
+13	18	9	Invisibility Cloak +9
+13	19	0	Divine Staf of Archangel
+13	19	1	Divine Sword of Archangel
+13	19	2	Divine CrossBow of Archangel
+13	20	0	Wizards Ring
+13	20	1	Ring of Warrior lvl 40
+13	20	2	Ring of Warrior lvl 80
+13	20	3	Ring of Honor
+13	21	0	Ring of Fire
+13	22	0	Ring of Earth
+13	23	0	Ring of Wind
+13	24	0	Ring of Magic
+13	25	0	Pendant of Ice
+13	26	0	Pendant of Wind
+13	27	0	Pendant of Water
+13	28	0	Pendant of Ability
+13	29	0	Armor of Guardman
+13	30	0	Cape of Lord
+13	31	0	Dark Horse Spirit
+13	32	0	Splinter of Armor
+13	32	1	Splinter of Armor +2
+13	32	2	Splinter of Armor +3
+13	32	3	Splinter of Armor +4
+13	32	4	Splinter of Armor +5
+13	32	5	Splinter of Armor +7
+13	32	6	Splinter of Armor +9
+13	32	7	Splinter of Armor +11
+13	32	8	Splinter of Armor +13
+13	32	9	Splinter of Armor +15
+13	32	10	Splinter of Armor +18
+13	33	0	Bless of Guardian
+13	33	1	Bless of Guardian +2
+13	33	2	Bless of Guardian +3
+13	33	3	Bless of Guardian +4
+13	33	4	Bless of Guardian +5
+13	33	5	Bless of Guardian +7
+13	33	6	Bless of Guardian +9
+13	33	7	Bless of Guardian +11
+13	33	8	Bless of Guardian +13
+13	33	9	Bless of Guardian +15
+13	33	10	Bless of Guardian +18
+13	34	0	Claw of Beast
+13	34	1	Claw of Beast +2
+13	34	2	Claw of Beast +3
+13	34	3	Claw of Beast +4
+13	34	4	Claw of Beast +5
+13	34	5	Claw of Beast +7
+13	34	6	Claw of Beast +9
+13	34	7	Claw of Beast +11
+13	34	8	Claw of Beast +13
+13	34	9	Claw of Beast +15
+13	34	10	Claw of Beast +18
+13	35	0	Piece of Horn
+13	36	0	Broken Horn
+13	37	0	Red Fenrir
+13	37	1	Black Fenrir
+13	37	2	Blue Fenrir
+13	38	0	MoonStone Ring
+13	39	0	Ring 1
+13	40	0	Ring 2
+13	41	0	Christmas turkey Ring
+13	42	0	GM Ring
+13	43	0	Green Symbol
+13	44	0	Pink Symbol
+13	45	0	Yellow Symbol
+13	46	0	Devil Square Ticket
+13	47	0	Blood Castle Ticket
+13	48	0	Kalima Ticket
+13	49	0	Illusion Pergament
+13	49	1	Illusion Pergament +1
+13	49	2	Illusion Pergament +2
+13	49	3	Illusion Pergament +3
+13	49	4	Illusion Pergament +4
+13	49	5	Illusion Pergament +5
+13	49	6	Illusion Pergament +6
+13	49	7	Illusion Pergament +7
+13	50	0	Illusion Blood
+13	50	1	Illusion Blood +1
+13	50	2	Illusion Blood +2
+13	50	3	Illusion Blood +3
+13	50	4	Illusion Blood +4
+13	50	5	Illusion Blood +5
+13	50	6	Illusion Blood +6
+13	50	7	Illusion Blood +7
+13	51	0	Illusion Entrance Ticket
+13	51	1	Illusion Entrance Ticket +1
+13	51	2	Illusion Entrance Ticket +2
+13	51	3	Illusion Entrance Ticket +3
+13	51	4	Illusion Entrance Ticket +4
+13	51	5	Illusion Entrance Ticket +5
+13	51	6	Illusion Entrance Ticket +6
+13	51	7	Illusion Entrance Ticket +7
+13	52	0	Flame of Condor
+13	53	0	Feather of Condor
+13	54	0	Kalima Ticket
+13	55	0	Reset Fruit Quickness
+13	56	0	Reset Fruit Health
+13	57	0	Reset Fruit Energy
+13	58	0	Reset Fruit Control
+13	59	0	Seal of Mobility
+13	60	0	Indulgence
+13	61	0	Illusion Temple Ticket
+13	62	0	Seal of Healing
+13	63	0	Seal of Divinity
+13	64	0	Evil Satan
+13	65	0	Hada
+13	66	0	Mountain Village Invitation
+13	67	0	Rudolf
+13	68	0	SnowMan Ring
+13	69	0	Talisman of Resurrection
+12	0	0	Wing of Fairy
+12	1	0	Wing of Angel
+12	2	0	Wing of Satan
+12	3	0	Wing of Spirit
+12	4	0	Wing of Soul
+12	5	0	Wing of Devil
+12	6	0	Wing of Darkness
+12	7	0	Orb of Twisting Slash
+12	8	0	Healing Orb
+12	9	0	Orb of Great Defense
+12	10	0	Orb of Greater Damage
+12	11	0	Orb of Summoning
+12	12	0	Orb of Rageful Blow
+12	13	0	Orb of Impale
+12	14	0	Orb of Great Fortitude
+12	15	0	Jewel of Chaos
+12	16	0	Orb of Fire Slash
+12	17	0	Orb of Penetration
+12	18	0	Orb of Ice Arrow
+12	19	0	Orb of Death Stab
+12	21	0	Scroll of FireBurst
+12	22	0	Scroll of Summon
+12	23	0	Scroll of Critical Damage
+12	24	0	Scroll of Elect Spark
+12	25	0	Scroll of Sacrifice
+12	26	0	Jewel of Secret
+12	26	1	Red Crystal
+12	26	2	Blue Crystal
+12	26	3	Darck Crystal
+12	26	4	Box Of Treasure
+12	26	5	Box Of Surprise
+12	30	0	Bundled Jewel of Bless 10
+12	30	1	Bundled Jewel of Bless 20
+12	30	2	Bundled Jewel of Bless 30
+12	31	0	Bundled Jewel of Soul 10
+12	31	1	Bundled Jewel of Soul 20
+12	31	2	Bundled Jewel of Soul 30
+12	32	0	Red Ribbon Box
+12	33	0	Blue Ribbon Box
+12	34	0	Green Ribbon Box
