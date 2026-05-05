@@ -235,7 +235,7 @@ namespace MuAdmin.Controls
             _cbItemLevel.SelectedIndexChanged += (s, e) =>
             {
                 if (_suppress) return;
-                int lvl = _cbItemLevel.SelectedIndex < 0 ? 0 : _cbItemLevel.SelectedIndex;
+                int lvl = SelectedItemLevel();
                 // Convenience: when the user picks a named level variant we
                 // keep LvlMin/LvlMax in sync so the produced row reflects it.
                 _numLvlMin.Value = Math.Min(_numLvlMin.Maximum, lvl);
@@ -300,6 +300,26 @@ namespace MuAdmin.Controls
             return _cbItem.SelectedItem as ItemComboItem;
         }
 
+        /// <summary>
+        /// Returns the actual item level represented by the currently
+        /// selected <c>_cbItemLevel</c> entry. Items are formatted as
+        /// <c>"+N — Name"</c>, so the level is parsed from the leading
+        /// <c>+N</c> marker rather than relying on the dropdown index
+        /// (which no longer maps 1:1 to level once the level list is
+        /// sourced from <c>Item_level.txt</c>).
+        /// </summary>
+        private int SelectedItemLevel()
+        {
+            var s = _cbItemLevel.SelectedItem as string;
+            if (string.IsNullOrEmpty(s)) return 0;
+            int start = 0;
+            if (s.Length > 0 && s[0] == '+') start = 1;
+            int end = start;
+            while (end < s.Length && char.IsDigit(s[end])) end++;
+            int v;
+            return end > start && int.TryParse(s.Substring(start, end - start), out v) ? v : 0;
+        }
+
         // ---------- behaviour ----------
 
         private void UpdateItemGroupVisibility()
@@ -348,18 +368,44 @@ namespace MuAdmin.Controls
                     return;
                 }
 
+                // Prefer the explicit level list from Item_level.txt when
+                // the project has loaded one — that file is the source of
+                // truth for which level variants actually exist for an
+                // item (e.g. 14/11 has 0/1/2/3/5/6/7/8/9/10/11/12/13/14/15
+                // but not 4). Fall back to a dense 0..max range when the
+                // file is absent or the item isn't listed in it.
+                var knownLevels = _project.ItemLevels != null
+                    ? _project.ItemLevels.GetKnownLevels(item.Type, item.Index)
+                    : null;
+
                 int maxLvl = Math.Max(0, ItemLevelNames.MaxKnownLevel(item.Type, item.Index));
-                // Always offer at least levels 0..7 so the user can build any
-                // standard MU drop; named variants (Box of Kundun, ...) are
-                // shown when known.
                 int upper = Math.Max(maxLvl, 7);
-                for (int lvl = 0; lvl <= upper; lvl++)
+
+                int selectedIdx = -1;
+                int desiredLvl = (int)_numLvlMin.Value;
+
+                if (knownLevels != null && knownLevels.Count > 0)
                 {
-                    string display = ItemLevelNames.DisplayName(item.BaseName, item.Type, item.Index, lvl);
-                    _cbItemLevel.Items.Add("+" + lvl + " — " + display);
+                    for (int i = 0; i < knownLevels.Count; i++)
+                    {
+                        int lvl = knownLevels[i];
+                        string display = ItemLevelNames.DisplayName(item.BaseName, item.Type, item.Index, lvl);
+                        _cbItemLevel.Items.Add("+" + lvl + " — " + display);
+                        if (lvl == desiredLvl) selectedIdx = i;
+                    }
                 }
-                int currentLvl = (int)Math.Min(_numLvlMin.Value, upper);
-                _cbItemLevel.SelectedIndex = currentLvl;
+                else
+                {
+                    for (int lvl = 0; lvl <= upper; lvl++)
+                    {
+                        string display = ItemLevelNames.DisplayName(item.BaseName, item.Type, item.Index, lvl);
+                        _cbItemLevel.Items.Add("+" + lvl + " — " + display);
+                        if (lvl == desiredLvl) selectedIdx = lvl;
+                    }
+                }
+
+                if (_cbItemLevel.Items.Count > 0)
+                    _cbItemLevel.SelectedIndex = selectedIdx >= 0 ? selectedIdx : 0;
             }
             finally { _suppress = false; }
         }

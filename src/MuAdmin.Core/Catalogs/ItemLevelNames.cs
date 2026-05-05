@@ -22,7 +22,7 @@ namespace MuAdmin.Core.Catalogs
         // is indexed by item level (0 = base). Only items with a known
         // canonical naming sequence are listed here; everything else falls
         // back to "<BaseName> +N" via DisplayName().
-        private static readonly Dictionary<long, string[]> _names = new Dictionary<long, string[]>
+        private static readonly Dictionary<long, string[]> _builtIn = new Dictionary<long, string[]>
         {
             // 14/11 — Box of Luck → Box of Kundun +1..+5 (vanilla MU).
             { ItemCatalog.Key(14, 11), new[]
@@ -71,6 +71,48 @@ namespace MuAdmin.Core.Catalogs
             }
         };
 
+        // Names sourced from a project-loaded Item_level.txt. Replaces the
+        // built-in entries for any item that appears in the file so the
+        // server's customised naming wins over the vanilla defaults.
+        private static Dictionary<long, string[]> _projectNames = new Dictionary<long, string[]>();
+
+        /// <summary>
+        /// Replaces the project-level overrides with names from the given
+        /// <see cref="ItemLevelCatalog"/>. Pass <c>null</c> or an empty
+        /// catalog to clear them and fall back to the built-in table only.
+        /// </summary>
+        public static void Apply(ItemLevelCatalog catalog)
+        {
+            var fresh = new Dictionary<long, string[]>();
+            if (catalog != null && catalog.HasData)
+            {
+                // Group entries by (type,index) and build a dense
+                // 0..maxLevel array, leaving gaps as null so the
+                // DisplayName fallback ("BaseName +N") still applies.
+                var byItem = new Dictionary<long, List<ItemLevelCatalog.Entry>>();
+                foreach (var e in catalog.Entries)
+                {
+                    long k = ItemCatalog.Key(e.Type, e.Index);
+                    List<ItemLevelCatalog.Entry> list;
+                    if (!byItem.TryGetValue(k, out list))
+                    {
+                        list = new List<ItemLevelCatalog.Entry>();
+                        byItem[k] = list;
+                    }
+                    list.Add(e);
+                }
+                foreach (var kv in byItem)
+                {
+                    int max = 0;
+                    foreach (var e in kv.Value) if (e.Level > max) max = e.Level;
+                    var arr = new string[max + 1];
+                    foreach (var e in kv.Value) arr[e.Level] = e.Name;
+                    fresh[kv.Key] = arr;
+                }
+            }
+            _projectNames = fresh;
+        }
+
         /// <summary>
         /// Returns a level-aware display name for the given item. When a
         /// canonical level-named entry exists for <paramref name="type"/>/
@@ -81,13 +123,11 @@ namespace MuAdmin.Core.Catalogs
         public static string DisplayName(string baseName, int type, int index, int level)
         {
             if (string.IsNullOrEmpty(baseName)) baseName = "Item " + type + "/" + index;
-            if (level <= 0) return baseName;
+            if (level < 0) return baseName;
 
-            string[] table;
-            if (_names.TryGetValue(ItemCatalog.Key(type, index), out table)
-                && level < table.Length)
-                return table[level];
-
+            string named = LookupName(type, index, level);
+            if (named != null) return named;
+            if (level == 0) return baseName;
             return baseName + " +" + level;
         }
 
@@ -98,16 +138,44 @@ namespace MuAdmin.Core.Catalogs
         /// </summary>
         public static bool HasLevelVariants(int type, int index)
         {
+            long k = ItemCatalog.Key(type, index);
             string[] table;
-            return _names.TryGetValue(ItemCatalog.Key(type, index), out table)
-                   && table.Length > 1;
+            if (_projectNames.TryGetValue(k, out table) && CountNonEmpty(table) > 1) return true;
+            if (_builtIn.TryGetValue(k, out table) && table.Length > 1) return true;
+            return false;
         }
 
         /// <summary>Returns the highest known level for an item, or <c>0</c> when only the base name is known.</summary>
         public static int MaxKnownLevel(int type, int index)
         {
+            long k = ItemCatalog.Key(type, index);
+            int max = 0;
             string[] table;
-            return _names.TryGetValue(ItemCatalog.Key(type, index), out table) ? table.Length - 1 : 0;
+            if (_projectNames.TryGetValue(k, out table) && table.Length - 1 > max) max = table.Length - 1;
+            if (_builtIn.TryGetValue(k, out table) && table.Length - 1 > max) max = table.Length - 1;
+            return max;
+        }
+
+        private static string LookupName(int type, int index, int level)
+        {
+            long k = ItemCatalog.Key(type, index);
+            string[] table;
+            if (_projectNames.TryGetValue(k, out table)
+                && level < table.Length
+                && !string.IsNullOrEmpty(table[level]))
+                return table[level];
+            if (_builtIn.TryGetValue(k, out table)
+                && level < table.Length
+                && !string.IsNullOrEmpty(table[level]))
+                return table[level];
+            return null;
+        }
+
+        private static int CountNonEmpty(string[] arr)
+        {
+            int n = 0;
+            for (int i = 0; i < arr.Length; i++) if (!string.IsNullOrEmpty(arr[i])) n++;
+            return n;
         }
     }
 }
