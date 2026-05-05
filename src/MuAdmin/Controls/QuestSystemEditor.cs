@@ -371,7 +371,17 @@ namespace MuAdmin.Controls
                 && QuestRowSchema.ItemIndex < l.Cells.Count
                 && int.TryParse(l.Cells[QuestRowSchema.ItemType], out t)
                 && int.TryParse(l.Cells[QuestRowSchema.ItemIndex], out idx))
-                return _project.Items.GetName(t, idx);
+            {
+                string baseName = _project.Items.GetName(t, idx);
+                int lvl = 0;
+                // In QuestSystem.ini the cell labelled "LvlMin" is used as
+                // the prize item's level (e.g. "14 11 3" → "Heart of Love").
+                // Resolve through ItemLevelNames so the displayed name
+                // matches the variant from Item_level.txt.
+                if (QuestRowSchema.LvlMin < l.Cells.Count)
+                    int.TryParse(l.Cells[QuestRowSchema.LvlMin], out lvl);
+                return ItemLevelNames.DisplayName(baseName, t, idx, lvl);
+            }
             return string.Empty;
         }
 

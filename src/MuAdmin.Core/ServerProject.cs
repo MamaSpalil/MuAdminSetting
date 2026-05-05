@@ -14,6 +14,14 @@ namespace MuAdmin.Core
     {
         public string RootPath { get; }
         public ItemCatalog Items { get; private set; }
+        /// <summary>
+        /// Per-level item names loaded from <c>Item_level.txt</c> at the
+        /// server root. Used by the quest editors so prizes whose Type/
+        /// Index repeats across multiple levels (e.g. 14/11) can be shown
+        /// and picked by their proper variant name (Box of Luck / Heart
+        /// of Love / Bok of Kundun+1 / ...).
+        /// </summary>
+        public ItemLevelCatalog ItemLevels { get; private set; }
         public MonsterCatalog Monsters { get; private set; }
         /// <summary>Поставщик визуальных ассетов (карты/монстры) для редакторов.</summary>
         public AssetsManager Assets { get; private set; }
@@ -33,7 +41,13 @@ namespace MuAdmin.Core
         public void ReloadCatalogs()
         {
             Items = ItemCatalog.Load(Path.Combine(RootPath, "Items", "Item.txt"));
+            ItemLevels = ItemLevelCatalog.Load(Path.Combine(RootPath, "Item_level.txt"));
             Monsters = MonsterCatalog.Load(Path.Combine(RootPath, "Monsters", "Monster.txt"));
+            // Make per-level names from Item_level.txt available to the
+            // static helper used across the UI (quest editor, quick-add
+            // dialog, ...). Hard-coded fallbacks remain for items not
+            // present in the file.
+            ItemLevelNames.Apply(ItemLevels);
         }
 
         public string Resolve(params string[] parts)
