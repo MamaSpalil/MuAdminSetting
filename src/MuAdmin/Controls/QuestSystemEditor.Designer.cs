@@ -8,6 +8,8 @@ namespace MuAdmin.Controls
         private System.Windows.Forms.DataGridView _grid;
         private System.Windows.Forms.StatusStrip _status;
         private System.Windows.Forms.ToolStripStatusLabel _statusLabel;
+        private System.Windows.Forms.ToolStrip _toolbar;
+        private System.Windows.Forms.ToolStripButton _btnAddQuest;
 
         protected override void Dispose(bool disposing)
         {
@@ -22,6 +24,8 @@ namespace MuAdmin.Controls
             this._grid = new System.Windows.Forms.DataGridView();
             this._status = new System.Windows.Forms.StatusStrip();
             this._statusLabel = new System.Windows.Forms.ToolStripStatusLabel();
+            this._toolbar = new System.Windows.Forms.ToolStrip();
+            this._btnAddQuest = new System.Windows.Forms.ToolStripButton();
             ((System.ComponentModel.ISupportInitialize)(this._split)).BeginInit();
             this._split.Panel1.SuspendLayout();
             this._split.Panel2.SuspendLayout();
@@ -57,7 +61,16 @@ namespace MuAdmin.Controls
             this._status.Items.Add(this._statusLabel);
             this._status.Dock = System.Windows.Forms.DockStyle.Bottom;
 
+            this._toolbar.Dock = System.Windows.Forms.DockStyle.Top;
+            this._toolbar.GripStyle = System.Windows.Forms.ToolStripGripStyle.Hidden;
+            this._btnAddQuest.Text = "+ Добавить квест";
+            this._btnAddQuest.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Text;
+            this._btnAddQuest.ToolTipText = "Быстрое добавление квеста (Ctrl+N)";
+            this._btnAddQuest.Click += new System.EventHandler(this.OnAddQuestClick);
+            this._toolbar.Items.Add(this._btnAddQuest);
+
             this.Controls.Add(this._split);
+            this.Controls.Add(this._toolbar);
             this.Controls.Add(this._status);
             this.Name = "QuestSystemEditor";
             this.Size = new System.Drawing.Size(900, 600);

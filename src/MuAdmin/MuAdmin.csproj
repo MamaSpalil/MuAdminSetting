@@ -93,6 +93,12 @@
     <Compile Include="Controls\QuestSystemEditor.Designer.cs">
       <DependentUpon>QuestSystemEditor.cs</DependentUpon>
     </Compile>
+    <Compile Include="Controls\QuickAddQuestDialog.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Controls\QuickAddQuestDialog.Designer.cs">
+      <DependentUpon>QuickAddQuestDialog.cs</DependentUpon>
+    </Compile>
     <Compile Include="Controls\RawTextEditor.cs">
       <SubType>UserControl</SubType>
     </Compile>

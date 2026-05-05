@@ -440,5 +440,73 @@ namespace MuAdmin.Controls
             _statusLabel.Text = (_file == null ? string.Empty : Path.GetFileName(_file.Path))
                 + (IsDirty ? "  •  изменён" : "  •  без изменений");
         }
+
+        // ---------------- Quick add quest ----------------
+
+        private void OnAddQuestClick(object sender, EventArgs e)
+        {
+            if (_file == null || _project == null)
+            {
+                MessageBox.Show(this,
+                    "Файл QuestSystem.ini не загружен.",
+                    "Быстрое добавление квеста",
+                    MessageBoxButtons.OK, MessageBoxIcon.Information);
+                return;
+            }
+
+            using (var dlg = new QuickAddQuestDialog(_project))
+            {
+                if (dlg.ShowDialog(this.FindForm() ?? (Control)this) != DialogResult.OK)
+                    return;
+
+                int questNumber = CountExistingQuestRows() + 1;
+                var newLine = dlg.BuildQuestLine(questNumber);
+                int insertAt = FindInsertionIndex();
+                _file.Lines.Insert(insertAt, newLine);
+
+                // Rebuild the bottom grid so the new row shows up immediately
+                // with its resolved Location/Monster/Item names. The header
+                // grid is unaffected.
+                BuildQuestTable();
+                IsDirty = true;
+                UpdateStatus();
+
+                // Scroll to and select the freshly added row.
+                int newGridRow = _rowToLine != null ? _rowToLine.IndexOf(insertAt) : -1;
+                if (newGridRow >= 0 && newGridRow < _grid.Rows.Count)
+                {
+                    _grid.ClearSelection();
+                    _grid.Rows[newGridRow].Selected = true;
+                    _grid.FirstDisplayedScrollingRowIndex = newGridRow;
+                }
+            }
+        }
+
+        private int CountExistingQuestRows()
+        {
+            int n = 0;
+            for (int i = 0; i < _file.Lines.Count; i++)
+                if (_file.Lines[i].Kind == QuestSystemLineKind.Quest) n++;
+            return n;
+        }
+
+        // Inserts immediately before the trailing "end" terminator, or at the
+        // end of the file if no such marker is present. Skips trailing blank
+        // lines so the new row sits flush with the last quest entry.
+        private int FindInsertionIndex()
+        {
+            for (int i = _file.Lines.Count - 1; i >= 0; i--)
+            {
+                var l = _file.Lines[i];
+                if (l.Kind == QuestSystemLineKind.BlockMarker
+                    && string.Equals((l.OriginalText ?? string.Empty).Trim(), "end",
+                                     StringComparison.OrdinalIgnoreCase))
+                    return i;
+            }
+            // Fall back: insert before any trailing blank lines.
+            int idx = _file.Lines.Count;
+            while (idx > 0 && _file.Lines[idx - 1].Kind == QuestSystemLineKind.Blank) idx--;
+            return idx;
+        }
     }
 }
