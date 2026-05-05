@@ -54,8 +54,11 @@
   <ItemGroup>
     <Reference Include="System" />
     <Reference Include="System.Core" />
+    <Reference Include="System.Drawing" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Assets\AssetsManager.cs" />
+    <Compile Include="Assets\PlaceholderRenderer.cs" />
     <Compile Include="Parsers\TabularFileParser.cs" />
     <Compile Include="Parsers\IniFileParser.cs" />
     <Compile Include="Parsers\CfgFileParser.cs" />
@@ -68,6 +71,7 @@
     <Compile Include="Catalogs\MapNames.cs" />
     <Compile Include="Catalogs\ItemCatalog.cs" />
     <Compile Include="Catalogs\MonsterCatalog.cs" />
+    <Compile Include="Catalogs\MonsterSetBaseLayout.cs" />
     <Compile Include="ServerProject.cs" />
     <Compile Include="BackupManager.cs" />
     <Compile Include="EncodingHelper.cs" />

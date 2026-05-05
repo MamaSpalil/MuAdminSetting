@@ -1,5 +1,6 @@
 using System;
 using System.IO;
+using MuAdmin.Core.Assets;
 using MuAdmin.Core.Catalogs;
 
 namespace MuAdmin.Core
@@ -9,11 +10,13 @@ namespace MuAdmin.Core
     /// shared catalogs (maps / monsters / items) that are reused across all
     /// editor tabs to render numeric IDs as readable names.
     /// </summary>
-    public sealed class ServerProject
+    public sealed class ServerProject : IDisposable
     {
         public string RootPath { get; }
         public ItemCatalog Items { get; private set; }
         public MonsterCatalog Monsters { get; private set; }
+        /// <summary>Поставщик визуальных ассетов (карты/монстры) для редакторов.</summary>
+        public AssetsManager Assets { get; private set; }
 
         public ServerProject(string rootPath)
         {
@@ -23,6 +26,7 @@ namespace MuAdmin.Core
                 throw new DirectoryNotFoundException(rootPath);
 
             RootPath = Path.GetFullPath(rootPath);
+            Assets = new AssetsManager(RootPath);
             ReloadCatalogs();
         }
 
@@ -60,6 +64,11 @@ namespace MuAdmin.Core
                 if (File.Exists(p) || Directory.Exists(p)) hits++;
             }
             return hits >= 4;
+        }
+
+        public void Dispose()
+        {
+            if (Assets != null) { Assets.Dispose(); Assets = null; }
         }
     }
 }

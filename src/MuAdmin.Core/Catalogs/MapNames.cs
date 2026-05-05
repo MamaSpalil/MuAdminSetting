@@ -41,6 +41,20 @@ namespace MuAdmin.Core.Catalogs
             return _names.TryGetValue(id, out name) ? name : "Map " + id;
         }
 
+        /// <summary>
+        /// Reverse lookup of <see cref="Get"/>: returns the map number whose
+        /// canonical name matches <paramref name="name"/> (case-insensitive),
+        /// or <c>-1</c> if unknown.
+        /// </summary>
+        public static int GetNumberByName(string name)
+        {
+            if (string.IsNullOrEmpty(name)) return -1;
+            foreach (var kv in _names)
+                if (string.Equals(kv.Value, name, System.StringComparison.OrdinalIgnoreCase))
+                    return kv.Key;
+            return -1;
+        }
+
         public static IReadOnlyDictionary<int, string> All { get { return _names; } }
     }
 }

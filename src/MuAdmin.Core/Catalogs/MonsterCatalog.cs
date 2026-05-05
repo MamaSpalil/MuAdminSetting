@@ -7,20 +7,56 @@ namespace MuAdmin.Core.Catalogs
 {
     /// <summary>
     /// Loads <c>Monsters\Monster.txt</c> into an in-memory map of
-    /// <c>MonsterIndex → Name</c> for use by the spot editor
-    /// (<c>MonsterSetBase*.txt</c>) and by quest / drop editors.
+    /// <c>MonsterIndex → (Name + key stats)</c> for use by the spot
+    /// editor (<c>MonsterSetBase*.txt</c>) and by quest / drop editors.
+    /// Stats are sourced from the documented column order:
+    /// <c>Numb, Rate, Name, Level, Heal, Mana, MinDmg, MaxDmg, Def, ...</c>
     /// </summary>
     public sealed class MonsterCatalog
     {
-        private readonly Dictionary<int, string> _names = new Dictionary<int, string>();
+        /// <summary>Key stats extracted from a <c>Monster.txt</c> row.</summary>
+        public sealed class Stats
+        {
+            public string Name;
+            public int Level;
+            /// <summary>HP — column "Heal" in <c>Monster.txt</c>.</summary>
+            public int Hp;
+            public int Mana;
+            public int MinDmg;
+            public int MaxDmg;
+            public int Def;
+        }
+
+        private readonly Dictionary<int, Stats> _stats = new Dictionary<int, Stats>();
 
         public string GetName(int index)
         {
-            string name;
-            return _names.TryGetValue(index, out name) ? name : "Monster " + index;
+            Stats s;
+            return _stats.TryGetValue(index, out s) ? s.Name : "Monster " + index;
         }
 
-        public IReadOnlyDictionary<int, string> All { get { return _names; } }
+        /// <summary>Returns extracted stats for the monster, or <c>null</c> if unknown.</summary>
+        public Stats GetStats(int index)
+        {
+            Stats s;
+            return _stats.TryGetValue(index, out s) ? s : null;
+        }
+
+        public IEnumerable<KeyValuePair<int, Stats>> AllStats { get { return _stats; } }
+
+        /// <summary>
+        /// Backwards-compatible name-only view for callers that don't need
+        /// the full <see cref="Stats"/> record.
+        /// </summary>
+        public IReadOnlyDictionary<int, string> All
+        {
+            get
+            {
+                var d = new Dictionary<int, string>(_stats.Count);
+                foreach (var kv in _stats) d[kv.Key] = kv.Value.Name;
+                return d;
+            }
+        }
 
         public static MonsterCatalog Load(string monsterTxtPath)
         {
@@ -41,9 +77,23 @@ namespace MuAdmin.Core.Catalogs
                 string raw = l.Cells[2];
                 if (raw.Length >= 2 && raw[0] == '"' && raw[raw.Length - 1] == '"')
                     raw = raw.Substring(1, raw.Length - 2);
-                cat._names[idx] = raw;
+
+                var s = new Stats { Name = raw };
+                ParseInt(l.Cells, 3, out s.Level);
+                ParseInt(l.Cells, 4, out s.Hp);
+                ParseInt(l.Cells, 5, out s.Mana);
+                ParseInt(l.Cells, 6, out s.MinDmg);
+                ParseInt(l.Cells, 7, out s.MaxDmg);
+                ParseInt(l.Cells, 8, out s.Def);
+                cat._stats[idx] = s;
             }
             return cat;
+        }
+
+        private static void ParseInt(IList<string> cells, int col, out int value)
+        {
+            value = 0;
+            if (col < cells.Count) int.TryParse(cells[col], out value);
         }
     }
 }

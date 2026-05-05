@@ -43,7 +43,8 @@ namespace MuAdmin.Controls
         private const int ColLocationName = FirstDataCol + QuestRowSchema.ColumnCount;
         private const int ColMonsterName = ColLocationName + 1;
         private const int ColItemName = ColMonsterName + 1;
-        private const int ColTrailing = ColItemName + 1;
+        private const int ColItemIcon = ColItemName + 1;
+        private const int ColTrailing = ColItemIcon + 1;
 
         // Prize type display strings shown in the combobox column.
         private static readonly string[] PrizeTypeLabels =
@@ -166,6 +167,7 @@ namespace MuAdmin.Controls
                 _questTable.Columns.Add("Location name", typeof(string));
                 _questTable.Columns.Add("Monster name", typeof(string));
                 _questTable.Columns.Add("Item name", typeof(string));
+                _questTable.Columns.Add("Item", typeof(System.Drawing.Image));
                 _questTable.Columns.Add("// trailing", typeof(string));
 
                 _rowToLine = new List<int>();
@@ -196,6 +198,7 @@ namespace MuAdmin.Controls
                         row[ColLocationName] = ResolveLocation(l, QuestRowSchema.Location);
                         row[ColMonsterName] = ResolveMonster(l);
                         row[ColItemName] = ResolveItem(l);
+                        row[ColItemIcon] = ResolveItemIcon(l);
                         row[ColTrailing] = l.TrailingComment;
                     }
                     else
@@ -216,6 +219,17 @@ namespace MuAdmin.Controls
                 if (_grid.Columns.Count > ColLocationName) _grid.Columns[ColLocationName].ReadOnly = true;
                 if (_grid.Columns.Count > ColMonsterName) _grid.Columns[ColMonsterName].ReadOnly = true;
                 if (_grid.Columns.Count > ColItemName) _grid.Columns[ColItemName].ReadOnly = true;
+                if (_grid.Columns.Count > ColItemIcon)
+                {
+                    _grid.Columns[ColItemIcon].ReadOnly = true;
+                    var iconCol = _grid.Columns[ColItemIcon] as DataGridViewImageColumn;
+                    if (iconCol != null)
+                    {
+                        iconCol.ImageLayout = DataGridViewImageCellLayout.Zoom;
+                        iconCol.Width = 36;
+                        iconCol.HeaderText = string.Empty;
+                    }
+                }
                 if (_grid.Columns.Count > ColTrailing) _grid.Columns[ColTrailing].ReadOnly = true;
 
                 // Replace the PrizeType column with a combobox that has the
@@ -361,6 +375,18 @@ namespace MuAdmin.Controls
             return string.Empty;
         }
 
+        private object ResolveItemIcon(QuestSystemLine l)
+        {
+            if (_project?.Assets == null) return DBNull.Value;
+            int t, idx;
+            if (QuestRowSchema.ItemType < l.Cells.Count
+                && QuestRowSchema.ItemIndex < l.Cells.Count
+                && int.TryParse(l.Cells[QuestRowSchema.ItemType], out t)
+                && int.TryParse(l.Cells[QuestRowSchema.ItemIndex], out idx))
+                return (object)_project.Assets.GetItem(t, idx);
+            return DBNull.Value;
+        }
+
         private void OnHeaderCellChanged(object sender, DataGridViewCellEventArgs e)
         {
             if (_suppressEvents) return;
@@ -394,6 +420,7 @@ namespace MuAdmin.Controls
                 _questTable.Rows[e.RowIndex][ColLocationName] = ResolveLocation(synth, QuestRowSchema.Location);
                 _questTable.Rows[e.RowIndex][ColMonsterName] = ResolveMonster(synth);
                 _questTable.Rows[e.RowIndex][ColItemName] = ResolveItem(synth);
+                _questTable.Rows[e.RowIndex][ColItemIcon] = ResolveItemIcon(synth);
             }
             finally { _suppressEvents = false; }
 

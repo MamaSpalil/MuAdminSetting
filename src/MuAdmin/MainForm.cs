@@ -85,8 +85,10 @@ namespace MuAdmin
                         MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
                     if (r != DialogResult.Yes) return;
                 }
+                var old = _project;
                 _project = new ServerProject(path);
                 foreach (var t in _tabs) t.AttachProject(_project);
+                if (old != null) old.Dispose();
                 UpdateTitle();
             }
             catch (Exception ex)
