@@ -25,6 +25,7 @@ namespace MuAdmin.Controls
             this._grid.Dock = System.Windows.Forms.DockStyle.Fill;
             this._grid.AllowUserToAddRows = false;
             this._grid.AllowUserToDeleteRows = false;
+            this._grid.AllowUserToOrderColumns = false;
             this._grid.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.AllCells;
             this._grid.RowHeadersVisible = false;
             this._grid.CellValueChanged += new System.Windows.Forms.DataGridViewCellEventHandler(this.OnCellChanged);
